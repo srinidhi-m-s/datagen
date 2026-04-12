@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Generation AI Platform</title>
+    <meta name="description"
+        content="AI-powered synthetic data generation platform using Google Gemini API. Generate realistic datasets with semantic relationships and performance comparison.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="background-gradient"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logo-gradient)" stroke-width="2"
+                                fill="none" />
+                            <circle cx="16" cy="16" r="4" fill="url(#logo-gradient)" />
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="4" y1="2" x2="28" y2="30">
+                                    <stop offset="0%" stop-color="#667eea" />
+                                    <stop offset="100%" stop-color="#764ba2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>DataGen AI </h1>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <a href="#" class="nav-link active">Generate</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>AI-Powered Data Generation with Schema Mapping</span>
+                </div>
+                <h2 class="hero-title">Generate Realistic Datasets<br>with <span class="gradient-text">Semantic
+                        Intelligence</span></h2>
+                <p class="hero-description">
+                    Describe your data needs in natural language. Our AI generates high-quality synthetic datasets with
+                    semantic relationships, filtering, and validation. Compare Normal vs Enhanced mode performance!
+                </p>
+            </section>
+
+            <!-- Query Input Section -->
+            <section class="query-section">
+                <div class="card query-card">
+                    <div class="card-header">
+                        <h3>What data do you need?</h3>
+                        <p>Describe your requirements in natural language</p>
+                    </div>
+
+                    <div class="query-input-wrapper">
+                        <textarea id="queryInput" class="query-input"
+                            placeholder="Example: Generate 50 customer records with name, email, age, phone number, and purchase history. Include realistic data with proper relationships."
+                            rows="4"></textarea>
+
+                        <div class="query-actions">
+                            <div class="button-group">
+                                <button id="generateBtn" class="btn btn-primary">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 2L12 8H18L13 12L15 18L10 14L5 18L7 12L2 8H8L10 2Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <span>Generate Data</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingSection" class="loading-state hidden">
+                        <div class="loading-spinner"></div>
+                        <p>AI is generating your data with semantic relationships...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="errorSection" class="error-state hidden">
+                        <div class="error-icon">⚠️</div>
+                        <p id="errorMessage"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Section -->
+            <section id="comparisonSection" class="comparison-section hidden">
+                <!-- Populated by JavaScript -->
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="card results-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Generated Data</h3>
+                            <p id="recordCount">0 records generated</p>
+                        </div>
+                        <div class="results-actions">
+                            <button id="downloadCSV" class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 11L4 7H6V3H10V7H12L8 11Z" fill="currentColor" />
+                                    <path d="M13 13H3V11H13V13Z" fill="currentColor" />
+                                </svg>
+                                Download CSV
+                            </button>
+                            <button id="downloadJSON" class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 11L4 7H6V3H10V7H12L8 11Z" fill="currentColor" />
+                                    <path d="M13 13H3V11H13V13Z" fill="currentColor" />
+                                </svg>
+                                Download JSON
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Schema Display -->
+                    <div id="schemaInfo" class="schema-display"></div>
+
+                    <!-- Data Table -->
+                    <div class="table-wrapper">
+                        <div id="dataTable" class="data-table-container"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Examples Section -->
+            <section class="examples-section">
+                <h3 class="section-title">Example Queries</h3>
+                <div class="examples-grid">
+                    <div class="example-card example-query">
+                        <div class="example-icon">👥</div>
+                        <h4>Customer Data</h4>
+                        <p>Generate 30 customer records with name, email, age, phone, address, and membership tier</p>
+                    </div>
+
+                    <div class="example-card example-query">
+                        <div class="example-icon">📦</div>
+                        <h4>Product Catalog</h4>
+                        <p>Create 25 product records with SKU, name, category, price, stock quantity, and description
+                        </p>
+                    </div>
+
+                    <div class="example-card example-query">
+                        <div class="example-icon">💳</div>
+                        <h4>Transactions</h4>
+                        <p>Generate 40 transaction records with transaction ID, customer ID, product, amount, date, and
+                            payment method</p>
+                    </div>
+
+                    <div class="example-card example-query">
+                        <div class="example-icon">👔</div>
+                        <h4>Employee Data</h4>
+                        <p>Create 20 employee records with employee ID, name, department, position, salary, and hire
+                            date</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <h4>Schema Relationship Mapping</h4>
+                        <p>Automatically detects and maintains semantic relationships between data fields</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h4>Data Filtering & Validation</h4>
+                        <p>Filter generated data and validate against constraints</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h4>Performance Comparison</h4>
+                        <p>Compare Normal LLM vs Enhanced mode with detailed metrics</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h4>Quality Metrics</h4>
+                        <p>Track schema compliance, relationship scores, and data quality</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 DataGen AI </p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="https://makersuite.google.com/app/apikey" target="_blank">Get API Key</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
