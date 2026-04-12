@@ -1,0 +1,20 @@
+{
+  "domain": "education",
+  "task": "student performance prediction",
+  "entity": "student",
+  "target_variable": "final_exam_score",
+  "features": [
+    "age",
+    "gender",
+    "attendance_rate",
+    "study_hours_per_week",
+    "previous_grade",
+    "assignment_score",
+    "parental_education_level",
+    "internet_access",
+    "extracurricular_participation"
+  ],
+  "data_type": "tabular",
+  "time_dependency": false,
+  "problem_type": "regression"
+}

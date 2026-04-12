@@ -17,6 +17,9 @@ from backend.integrate.schema_mapper import map_llm_to_schema, DatasetSchema, sc
 
 # Import the old schema mapper for semantic relationship analysis
 from backend.schema_mapper import schema_mapper
+from backend.data_filter import data_filter
+from backend.performance_comparator import performance_comparator
+from backend.data_post_processor import data_post_processor
 
 # Load environment variables
 load_dotenv()
@@ -38,7 +41,7 @@ class GeminiService:
         self.client = genai.Client(api_key=api_key)
         
         # Model configuration
-        self.model_name = 'gemini-2.5-flash'  # Using Gemini 2.5 Flash (free tier)
+        self.model_name = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')  # Configurable model (default gemini-2.5-flash)
         
         self.generation_config = types.GenerateContentConfig(
             temperature=0.7,  # Balanced creativity and consistency
@@ -678,7 +681,7 @@ Respond ONLY with valid JSON matching the format above. Include all relevant fie
                 schema_extraction_prompt += f"\n\nKNOWLEDGE BASE CONTEXT:\n{json.dumps(rag_context, indent=2)}"
             
             # Call LLM for schema extraction
-            print("🤖 Step 1: LLM extracting schema with semantic understanding...")
+            print(" Step 1: LLM extracting schema with semantic understanding...")
             response = self.client.models.generate_content(
                 model=self.model_name,
                 contents=schema_extraction_prompt,

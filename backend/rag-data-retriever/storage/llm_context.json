@@ -1,0 +1,2957 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "mstz/student_performance",
+      "columns": [
+        "is_male",
+        "ethnicity",
+        "parental_level_of_education",
+        "has_standard_lunch",
+        "has_completed_preparation_test",
+        "reading_score",
+        "writing_score",
+        "has_passed_math_exam"
+      ],
+      "sample_rows": [
+        {
+          "is_male": false,
+          "ethnicity": "group D",
+          "parental_level_of_education": 2,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": true,
+          "reading_score": 70,
+          "writing_score": 78,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group D",
+          "parental_level_of_education": 5,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 93,
+          "writing_score": 87,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group D",
+          "parental_level_of_education": 2,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 76,
+          "writing_score": 77,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group B",
+          "parental_level_of_education": 2,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 70,
+          "writing_score": 63,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group D",
+          "parental_level_of_education": 5,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 85,
+          "writing_score": 86,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group C",
+          "parental_level_of_education": 0,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 57,
+          "writing_score": 54,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group E",
+          "parental_level_of_education": 5,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 83,
+          "writing_score": 80,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group B",
+          "parental_level_of_education": 0,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 61,
+          "writing_score": 58,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group C",
+          "parental_level_of_education": 0,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 75,
+          "writing_score": 73,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group C",
+          "parental_level_of_education": 3,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": true,
+          "reading_score": 69,
+          "writing_score": 77,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group B",
+          "parental_level_of_education": 0,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 69,
+          "writing_score": 69,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group B",
+          "parental_level_of_education": 4,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 50,
+          "writing_score": 49,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group B",
+          "parental_level_of_education": 3,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 74,
+          "writing_score": 76,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group A",
+          "parental_level_of_education": 2,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 73,
+          "writing_score": 70,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group C",
+          "parental_level_of_education": 4,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 54,
+          "writing_score": 52,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": true,
+          "ethnicity": "group E",
+          "parental_level_of_education": 4,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 46,
+          "writing_score": 43,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group C",
+          "parental_level_of_education": 2,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 47,
+          "writing_score": 41,
+          "has_passed_math_exam": 0
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group C",
+          "parental_level_of_education": 1,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": false,
+          "reading_score": 92,
+          "writing_score": 81,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group E",
+          "parental_level_of_education": 5,
+          "has_standard_lunch": false,
+          "has_completed_preparation_test": false,
+          "reading_score": 82,
+          "writing_score": 85,
+          "has_passed_math_exam": 1
+        },
+        {
+          "is_male": false,
+          "ethnicity": "group D",
+          "parental_level_of_education": 5,
+          "has_standard_lunch": true,
+          "has_completed_preparation_test": true,
+          "reading_score": 71,
+          "writing_score": 74,
+          "has_passed_math_exam": 1
+        }
+      ]
+    },
+    {
+      "dataset_id": "ryandt/datasets.for.education-writing-strategies",
+      "columns": [
+        "strategy",
+        "chain",
+        "text"
+      ],
+      "sample_rows": [
+        {
+          "strategy": "Pair students with an object or picture related to their topic, and ask them to describe their thoughts and feelings about it to spark their writing.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you\u2019re feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write a short story about a lost dog, but I just can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a touching story! What inspired you to choose that topic?"
+            },
+            {
+              "role": "student",
+              "content": "I saw a dog wandering around my neighborhood last week, and it made me think about how scared and confused it must feel."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a great emotional connection to your story. Now, let\u2019s try something different to spark your creativity. Can you find an object or a picture that relates to your story? Perhaps something that reminds you of that lost dog?"
+            },
+            {
+              "role": "student",
+              "content": "I have a picture of my dog that I could use."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Take a moment to look at that picture. What thoughts and feelings come to mind when you see it?"
+            },
+            {
+              "role": "student",
+              "content": "I feel happy looking at my dog, but I also feel sad thinking about a dog that is lost and alone. I remember how scared my dog was when we first adopted him."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a powerful mix of emotions! Try to describe those feelings in words. How do you think a lost dog might feel in a similar situation?"
+            },
+            {
+              "role": "student",
+              "content": "I think the lost dog would feel scared, lonely, and maybe even a little hopeless. It would be looking for a way back home."
+            },
+            {
+              "role": "tutor",
+              "content": "Great insights! Now, can you take those feelings and thoughts and start writing a few sentences about the lost dog\u2019s experience? You can use the emotions you've just described."
+            },
+            {
+              "role": "student",
+              "content": "Okay, I\u2019ll try. 'The lost dog wandered through the empty streets, his heart racing with fear and uncertainty. Each unfamiliar sound made him flinch, and he longed for the comfort of a warm home.'"
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a beautiful start! You\u2019ve captured the emotions really well. Keep building on that, and remember, it\u2019s okay if it\u2019s not perfect on the first try. Just let your thoughts flow."
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you\u2019re feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I'm trying to write a short story about a lost dog, but I just can't seem to get started.\n\n### ASSISTANT: That sounds like a touching story! What inspired you to choose that topic?\n\n### USER: I saw a dog wandering around my neighborhood last week, and it made me think about how scared and confused it must feel.\n\n### ASSISTANT: That\u2019s a great emotional connection to your story. Now, let\u2019s try something different to spark your creativity. Can you find an object or a picture that relates to your story? Perhaps something that reminds you of that lost dog?\n\n### USER: I have a picture of my dog that I could use.\n\n### ASSISTANT: Perfect! Take a moment to look at that picture. What thoughts and feelings come to mind when you see it?\n\n### USER: I feel happy looking at my dog, but I also feel sad thinking about a dog that is lost and alone. I remember how scared my dog was when we first adopted him.\n\n### ASSISTANT: That\u2019s a powerful mix of emotions! Try to describe those feelings in words. How do you think a lost dog might feel in a similar situation?\n\n### USER: I think the lost dog would feel scared, lonely, and maybe even a little hopeless. It would be looking for a way back home.\n\n### ASSISTANT: Great insights! Now, can you take those feelings and thoughts and start writing a few sentences about the lost dog\u2019s experience? You can use the emotions you've just described.\n\n### USER: Okay, I\u2019ll try. 'The lost dog wandered through the empty streets, his heart racing with fear and uncertainty. Each unfamiliar sound made him flinch, and he longed for the comfort of a warm home.'\n\n### ASSISTANT: That\u2019s a beautiful start! You\u2019ve captured the emotions really well. Keep building on that, and remember, it\u2019s okay if it\u2019s not perfect on the first try. Just let your thoughts flow.\n\n"
+        },
+        {
+          "strategy": "Encourage the use of sensory details by asking students to visualize their topic and write down what they see, hear, feel, taste, and smell.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write a short story, but I'm not sure how to begin. I have some ideas, but I can't seem to get them down on paper."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a great start! What\u2019s the main idea or theme of your story? What do you want your readers to feel or understand?"
+            },
+            {
+              "role": "student",
+              "content": "I want to write about a magical forest and the adventures a young girl has there. I want readers to feel wonder and excitement."
+            },
+            {
+              "role": "tutor",
+              "content": "Wonderful! Now, let\u2019s try to visualize that magical forest. Close your eyes for a moment and imagine it. What do you see around you?"
+            },
+            {
+              "role": "student",
+              "content": "I see tall, shimmering trees with colorful leaves and glowing flowers. There are little creatures darting around."
+            },
+            {
+              "role": "tutor",
+              "content": "Great imagery! Now, what do you hear in this forest? Any sounds that stand out?"
+            },
+            {
+              "role": "student",
+              "content": "I hear the rustling of leaves and the soft chirping of birds. There\u2019s also a gentle stream nearby."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Let\u2019s move to touch. What do you feel in this environment? Is there a breeze, or do the leaves feel soft?"
+            },
+            {
+              "role": "student",
+              "content": "There\u2019s a cool breeze, and the bark of the trees feels rough against my fingertips."
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent! Now, what about taste? Is there anything in this forest that might have a flavor?"
+            },
+            {
+              "role": "student",
+              "content": "Maybe the berries from the bushes. They would taste sweet and juicy."
+            },
+            {
+              "role": "tutor",
+              "content": "And lastly, what do you smell? What scents fill the air in your magical forest?"
+            },
+            {
+              "role": "student",
+              "content": "It smells fresh, like wet earth after rain, and there\u2019s a sweet floral scent from the flowers."
+            },
+            {
+              "role": "tutor",
+              "content": "Fantastic! Now that you have these sensory details, you can start weaving them into your story. Try writing a paragraph that captures this experience using what you've just described."
+            },
+            {
+              "role": "student",
+              "content": "Okay, I\u2019ll give it a try. Thanks for helping me visualize it!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I'm trying to write a short story, but I'm not sure how to begin. I have some ideas, but I can't seem to get them down on paper.\n\n### ASSISTANT: That\u2019s a great start! What\u2019s the main idea or theme of your story? What do you want your readers to feel or understand?\n\n### USER: I want to write about a magical forest and the adventures a young girl has there. I want readers to feel wonder and excitement.\n\n### ASSISTANT: Wonderful! Now, let\u2019s try to visualize that magical forest. Close your eyes for a moment and imagine it. What do you see around you?\n\n### USER: I see tall, shimmering trees with colorful leaves and glowing flowers. There are little creatures darting around.\n\n### ASSISTANT: Great imagery! Now, what do you hear in this forest? Any sounds that stand out?\n\n### USER: I hear the rustling of leaves and the soft chirping of birds. There\u2019s also a gentle stream nearby.\n\n### ASSISTANT: Perfect! Let\u2019s move to touch. What do you feel in this environment? Is there a breeze, or do the leaves feel soft?\n\n### USER: There\u2019s a cool breeze, and the bark of the trees feels rough against my fingertips.\n\n### ASSISTANT: Excellent! Now, what about taste? Is there anything in this forest that might have a flavor?\n\n### USER: Maybe the berries from the bushes. They would taste sweet and juicy.\n\n### ASSISTANT: And lastly, what do you smell? What scents fill the air in your magical forest?\n\n### USER: It smells fresh, like wet earth after rain, and there\u2019s a sweet floral scent from the flowers.\n\n### ASSISTANT: Fantastic! Now that you have these sensory details, you can start weaving them into your story. Try writing a paragraph that captures this experience using what you've just described.\n\n### USER: Okay, I\u2019ll give it a try. Thanks for helping me visualize it!\n\n"
+        },
+        {
+          "strategy": "Introduce the 'mind mapping' technique, allowing students to visually connect their thoughts and ideas around a central theme or topic.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I have an idea for a short story, but I can\u2019t seem to get started. I have some thoughts, but they feel all over the place."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s completely normal! Sometimes, organizing your thoughts can really help. Have you heard of the mind mapping technique?"
+            },
+            {
+              "role": "student",
+              "content": "I\u2019ve heard of it, but I\u2019m not really sure how it works."
+            },
+            {
+              "role": "tutor",
+              "content": "No problem! Mind mapping is a visual way to organize your ideas. It starts with a central theme or topic in the middle of a page, and then you branch out with related ideas. What\u2019s the central theme of your story?"
+            },
+            {
+              "role": "student",
+              "content": "I think it\u2019s about friendship and how it can change over time."
+            },
+            {
+              "role": "tutor",
+              "content": "Great topic! Write 'friendship' in the center of your page. Now, take a moment to think about different aspects of friendship that you want to explore. What are some ideas that come to mind?"
+            },
+            {
+              "role": "student",
+              "content": "I guess I could think about childhood friends, how relationships evolve, and maybe even some conflicts that arise."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Write those ideas as branches coming out from 'friendship.' You can add sub-branches for specific events or emotions related to those aspects. This will help you visually connect your thoughts."
+            },
+            {
+              "role": "student",
+              "content": "Okay, I\u2019m writing down 'childhood friends' and under that, I\u2019ll add 'shared adventures' and 'growing apart.'"
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent! As you continue to branch out, don\u2019t worry about perfection or structure. Just let your ideas flow. This is about capturing your thoughts visually. How does that feel so far?"
+            },
+            {
+              "role": "student",
+              "content": "It feels good! I can see my ideas starting to take shape."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s wonderful to hear! Once you have your mind map, you can start picking a few branches to expand on for your story. Remember, this is just a starting point. You can always revise later!"
+            },
+            {
+              "role": "student",
+              "content": "Thanks! I think this will really help me get started."
+            },
+            {
+              "role": "tutor",
+              "content": "You\u2019re welcome! Enjoy the process, and don\u2019t hesitate to reach out if you need more guidance as you write."
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I have an idea for a short story, but I can\u2019t seem to get started. I have some thoughts, but they feel all over the place.\n\n### ASSISTANT: That\u2019s completely normal! Sometimes, organizing your thoughts can really help. Have you heard of the mind mapping technique?\n\n### USER: I\u2019ve heard of it, but I\u2019m not really sure how it works.\n\n### ASSISTANT: No problem! Mind mapping is a visual way to organize your ideas. It starts with a central theme or topic in the middle of a page, and then you branch out with related ideas. What\u2019s the central theme of your story?\n\n### USER: I think it\u2019s about friendship and how it can change over time.\n\n### ASSISTANT: Great topic! Write 'friendship' in the center of your page. Now, take a moment to think about different aspects of friendship that you want to explore. What are some ideas that come to mind?\n\n### USER: I guess I could think about childhood friends, how relationships evolve, and maybe even some conflicts that arise.\n\n### ASSISTANT: Perfect! Write those ideas as branches coming out from 'friendship.' You can add sub-branches for specific events or emotions related to those aspects. This will help you visually connect your thoughts.\n\n### USER: Okay, I\u2019m writing down 'childhood friends' and under that, I\u2019ll add 'shared adventures' and 'growing apart.'\n\n### ASSISTANT: Excellent! As you continue to branch out, don\u2019t worry about perfection or structure. Just let your ideas flow. This is about capturing your thoughts visually. How does that feel so far?\n\n### USER: It feels good! I can see my ideas starting to take shape.\n\n### ASSISTANT: That\u2019s wonderful to hear! Once you have your mind map, you can start picking a few branches to expand on for your story. Remember, this is just a starting point. You can always revise later!\n\n### USER: Thanks! I think this will really help me get started.\n\n### ASSISTANT: You\u2019re welcome! Enjoy the process, and don\u2019t hesitate to reach out if you need more guidance as you write.\n\n"
+        },
+        {
+          "strategy": "Have students create a 'word bank' of relevant vocabulary or phrases related to their topic, which can ignite ideas and build confidence.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what topic you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write an essay about climate change."
+            },
+            {
+              "role": "tutor",
+              "content": "Great topic! What specific aspects of climate change are you focusing on?"
+            },
+            {
+              "role": "student",
+              "content": "I want to discuss its impact on wildlife and ecosystems."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds important. Who is your audience for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my environmental science class, so my classmates and teacher will read it."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Now, let\u2019s create a 'word bank' to help you gather relevant vocabulary and phrases. What words or phrases come to mind when you think about climate change and its impact on wildlife?"
+            },
+            {
+              "role": "student",
+              "content": "Um, I guess 'habitat loss,' 'endangered species,' 'ecosystem balance,' and 'carbon footprint.'"
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent start! Let\u2019s expand on that. Can you think of any specific animals or ecosystems that are affected by climate change?"
+            },
+            {
+              "role": "student",
+              "content": "Yes! Polar bears and coral reefs come to mind."
+            },
+            {
+              "role": "tutor",
+              "content": "Great additions! Now, let\u2019s add some action words or phrases that describe what is happening due to climate change. Any thoughts?"
+            },
+            {
+              "role": "student",
+              "content": "Maybe 'melting ice caps,' 'rising sea levels,' and 'extinction rates increasing'?"
+            },
+            {
+              "role": "tutor",
+              "content": "Fantastic! You\u2019re building a strong word bank. Now, let\u2019s summarize what you have so far. How does it feel to see these words laid out?"
+            },
+            {
+              "role": "student",
+              "content": "It feels good! I think I can use these words to start forming sentences."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! This word bank can serve as a foundation for your ideas. What\u2019s your next step in writing your essay?"
+            },
+            {
+              "role": "student",
+              "content": "I think I\u2019ll start drafting an introduction using some of these phrases."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a solid plan. Remember, you can always refer back to your word bank for inspiration. You\u2019ve got this!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what topic you're working on?\n\n### USER: I'm trying to write an essay about climate change.\n\n### ASSISTANT: Great topic! What specific aspects of climate change are you focusing on?\n\n### USER: I want to discuss its impact on wildlife and ecosystems.\n\n### ASSISTANT: That sounds important. Who is your audience for this essay?\n\n### USER: It's for my environmental science class, so my classmates and teacher will read it.\n\n### ASSISTANT: Perfect! Now, let\u2019s create a 'word bank' to help you gather relevant vocabulary and phrases. What words or phrases come to mind when you think about climate change and its impact on wildlife?\n\n### USER: Um, I guess 'habitat loss,' 'endangered species,' 'ecosystem balance,' and 'carbon footprint.'\n\n### ASSISTANT: Excellent start! Let\u2019s expand on that. Can you think of any specific animals or ecosystems that are affected by climate change?\n\n### USER: Yes! Polar bears and coral reefs come to mind.\n\n### ASSISTANT: Great additions! Now, let\u2019s add some action words or phrases that describe what is happening due to climate change. Any thoughts?\n\n### USER: Maybe 'melting ice caps,' 'rising sea levels,' and 'extinction rates increasing'?\n\n### ASSISTANT: Fantastic! You\u2019re building a strong word bank. Now, let\u2019s summarize what you have so far. How does it feel to see these words laid out?\n\n### USER: It feels good! I think I can use these words to start forming sentences.\n\n### ASSISTANT: Exactly! This word bank can serve as a foundation for your ideas. What\u2019s your next step in writing your essay?\n\n### USER: I think I\u2019ll start drafting an introduction using some of these phrases.\n\n### ASSISTANT: That sounds like a solid plan. Remember, you can always refer back to your word bank for inspiration. You\u2019ve got this!\n\n"
+        },
+        {
+          "strategy": "Encourage students to engage in free writing, where they write anything that comes to mind for a set period, without worrying about grammar or structure.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what you're trying to write about?"
+            },
+            {
+              "role": "student",
+              "content": "I'm working on a short story, but I can't seem to get anything down on paper."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a great start! What\u2019s the main idea or theme of your story?"
+            },
+            {
+              "role": "student",
+              "content": "It's about a young girl who discovers a hidden talent for painting that changes her life."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds intriguing! Who is your target audience for this story?"
+            },
+            {
+              "role": "student",
+              "content": "I think it's aimed at young adults, but I want it to be relatable to everyone."
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent! Now, let\u2019s try a technique that might help you break through that block. How about engaging in some free writing? Set a timer for 10 minutes and write anything that comes to mind related to your story. Don't worry about grammar or structure\u2014just let your thoughts flow."
+            },
+            {
+              "role": "student",
+              "content": "Free writing? I\u2019m not sure I can do that. What if it\u2019s just nonsense?"
+            },
+            {
+              "role": "tutor",
+              "content": "That's completely okay! The goal of free writing is to get your ideas out without the pressure of perfection. You might be surprised by what comes out. Just focus on the feelings, characters, or scenes that pop into your mind."
+            },
+            {
+              "role": "student",
+              "content": "Alright, I\u2019ll give it a try. But what if I get stuck again?"
+            },
+            {
+              "role": "tutor",
+              "content": "If you get stuck, just write about being stuck! Describe how that feels or what you wish you could write. Remember, this is just a warm-up exercise to loosen your thoughts. Ready to set the timer?"
+            },
+            {
+              "role": "student",
+              "content": "Okay, I\u2019m ready. Here goes nothing!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what you're trying to write about?\n\n### USER: I'm working on a short story, but I can't seem to get anything down on paper.\n\n### ASSISTANT: That's a great start! What\u2019s the main idea or theme of your story?\n\n### USER: It's about a young girl who discovers a hidden talent for painting that changes her life.\n\n### ASSISTANT: That sounds intriguing! Who is your target audience for this story?\n\n### USER: I think it's aimed at young adults, but I want it to be relatable to everyone.\n\n### ASSISTANT: Excellent! Now, let\u2019s try a technique that might help you break through that block. How about engaging in some free writing? Set a timer for 10 minutes and write anything that comes to mind related to your story. Don't worry about grammar or structure\u2014just let your thoughts flow.\n\n### USER: Free writing? I\u2019m not sure I can do that. What if it\u2019s just nonsense?\n\n### ASSISTANT: That's completely okay! The goal of free writing is to get your ideas out without the pressure of perfection. You might be surprised by what comes out. Just focus on the feelings, characters, or scenes that pop into your mind.\n\n### USER: Alright, I\u2019ll give it a try. But what if I get stuck again?\n\n### ASSISTANT: If you get stuck, just write about being stuck! Describe how that feels or what you wish you could write. Remember, this is just a warm-up exercise to loosen your thoughts. Ready to set the timer?\n\n### USER: Okay, I\u2019m ready. Here goes nothing!\n\n"
+        },
+        {
+          "strategy": "Suggest that students write a dialogue or conversation between two characters that relates to their essay topic, helping to explore different perspectives.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "I see you're feeling a bit stuck with your writing. Can you tell me more about the topic you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm writing an essay about the impact of social media on mental health."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a very relevant topic! Who is your intended audience for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my psychology class, so it's mainly for my professor and classmates."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! What is the purpose of your essay? Are you trying to inform, persuade, or analyze?"
+            },
+            {
+              "role": "student",
+              "content": "I want to analyze the effects and maybe suggest some solutions."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a solid approach. How about we try something different to get your ideas flowing? What if you wrote a dialogue between two characters discussing their views on social media and mental health?"
+            },
+            {
+              "role": "student",
+              "content": "That could work! But what should the characters talk about?"
+            },
+            {
+              "role": "tutor",
+              "content": "You could create one character who believes social media has a positive impact and another who feels it\u2019s harmful. This way, you can explore both perspectives and find a balance for your essay."
+            },
+            {
+              "role": "student",
+              "content": "That makes sense! I could name them Alex and Jamie. Alex could talk about how social media helps them connect with friends, while Jamie could share their struggles with comparison."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! You can even include specific examples or statistics that you plan to use in your essay. This will help you develop your arguments further."
+            },
+            {
+              "role": "student",
+              "content": "I like that idea! I think I\u2019ll give it a try and see where the dialogue takes me."
+            },
+            {
+              "role": "tutor",
+              "content": "Awesome! Remember, the goal here is to explore the different viewpoints. Don\u2019t worry about making it perfect; just let the conversation flow."
+            },
+            {
+              "role": "student",
+              "content": "Thanks! I feel more motivated to start now."
+            }
+          ],
+          "text": "### ASSISTANT: I see you're feeling a bit stuck with your writing. Can you tell me more about the topic you're working on?\n\n### USER: I'm writing an essay about the impact of social media on mental health.\n\n### ASSISTANT: That\u2019s a very relevant topic! Who is your intended audience for this essay?\n\n### USER: It's for my psychology class, so it's mainly for my professor and classmates.\n\n### ASSISTANT: Great! What is the purpose of your essay? Are you trying to inform, persuade, or analyze?\n\n### USER: I want to analyze the effects and maybe suggest some solutions.\n\n### ASSISTANT: That sounds like a solid approach. How about we try something different to get your ideas flowing? What if you wrote a dialogue between two characters discussing their views on social media and mental health?\n\n### USER: That could work! But what should the characters talk about?\n\n### ASSISTANT: You could create one character who believes social media has a positive impact and another who feels it\u2019s harmful. This way, you can explore both perspectives and find a balance for your essay.\n\n### USER: That makes sense! I could name them Alex and Jamie. Alex could talk about how social media helps them connect with friends, while Jamie could share their struggles with comparison.\n\n### ASSISTANT: Exactly! You can even include specific examples or statistics that you plan to use in your essay. This will help you develop your arguments further.\n\n### USER: I like that idea! I think I\u2019ll give it a try and see where the dialogue takes me.\n\n### ASSISTANT: Awesome! Remember, the goal here is to explore the different viewpoints. Don\u2019t worry about making it perfect; just let the conversation flow.\n\n### USER: Thanks! I feel more motivated to start now.\n\n"
+        },
+        {
+          "strategy": "Encourage students to start their writing session by reading a short, related poem or quote that evokes their thoughts and emotions about the topic.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Let's try a strategy to get those creative juices flowing. Have you thought about starting your session with a short poem or quote related to your topic?"
+            },
+            {
+              "role": "student",
+              "content": "I haven't really tried that before. I have some ideas, but I just can't seem to get them down on paper."
+            },
+            {
+              "role": "tutor",
+              "content": "That's completely normal! Can you tell me more about what you're writing? What's the topic, and why is it important to you?"
+            },
+            {
+              "role": "student",
+              "content": "I'm writing about the importance of community in our lives. It really matters to me because I've seen how support from others can change lives."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a beautiful topic! Do you have a specific audience in mind? Who are you writing this for?"
+            },
+            {
+              "role": "student",
+              "content": "I think it's for a local newsletter that highlights community stories. I want to inspire people to connect more."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Now, let\u2019s find a poem or quote that resonates with this theme. Something that speaks to the power of community or connection. Do you have any favorites or would you like me to suggest one?"
+            },
+            {
+              "role": "student",
+              "content": "I don't have any specific ones in mind, but I\u2019d love a suggestion!"
+            },
+            {
+              "role": "tutor",
+              "content": "How about this quote from Helen Keller: 'Alone we can do so little; together we can do so much.' It really captures the essence of community. What do you think?"
+            },
+            {
+              "role": "student",
+              "content": "I like that! It really sums up what I want to say."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Now, take a moment to reflect on that quote. How does it make you feel about your topic? What thoughts or ideas come to mind?"
+            },
+            {
+              "role": "student",
+              "content": "It makes me think about the different ways people come together, like volunteering and supporting local events. I want to highlight those stories."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a wonderful direction! Now that you've connected emotionally with your topic, why don't you try writing a few sentences or bullet points about those stories? Just let your ideas flow without worrying about perfection."
+            },
+            {
+              "role": "student",
+              "content": "Okay, I\u2019ll give it a shot! Thanks for helping me get started."
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Let's try a strategy to get those creative juices flowing. Have you thought about starting your session with a short poem or quote related to your topic?\n\n### USER: I haven't really tried that before. I have some ideas, but I just can't seem to get them down on paper.\n\n### ASSISTANT: That's completely normal! Can you tell me more about what you're writing? What's the topic, and why is it important to you?\n\n### USER: I'm writing about the importance of community in our lives. It really matters to me because I've seen how support from others can change lives.\n\n### ASSISTANT: That's a beautiful topic! Do you have a specific audience in mind? Who are you writing this for?\n\n### USER: I think it's for a local newsletter that highlights community stories. I want to inspire people to connect more.\n\n### ASSISTANT: Great! Now, let\u2019s find a poem or quote that resonates with this theme. Something that speaks to the power of community or connection. Do you have any favorites or would you like me to suggest one?\n\n### USER: I don't have any specific ones in mind, but I\u2019d love a suggestion!\n\n### ASSISTANT: How about this quote from Helen Keller: 'Alone we can do so little; together we can do so much.' It really captures the essence of community. What do you think?\n\n### USER: I like that! It really sums up what I want to say.\n\n### ASSISTANT: Perfect! Now, take a moment to reflect on that quote. How does it make you feel about your topic? What thoughts or ideas come to mind?\n\n### USER: It makes me think about the different ways people come together, like volunteering and supporting local events. I want to highlight those stories.\n\n### ASSISTANT: That's a wonderful direction! Now that you've connected emotionally with your topic, why don't you try writing a few sentences or bullet points about those stories? Just let your ideas flow without worrying about perfection.\n\n### USER: Okay, I\u2019ll give it a shot! Thanks for helping me get started.\n\n"
+        },
+        {
+          "strategy": "Implement the 'list-making' approach, where students jot down anything and everything they associate with their topic without the pressure of full sentences.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you\u2019re trying to write?"
+            },
+            {
+              "role": "student",
+              "content": "I want to write an article about the benefits of mindfulness, but I just can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a great topic! What\u2019s your purpose for writing this article? Is it for a class, a blog, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my blog, but I want it to be informative and engaging. I really want to connect with my readers."
+            },
+            {
+              "role": "tutor",
+              "content": "Connecting with your readers is important! Do you have any specific guidelines or a word count you need to follow?"
+            },
+            {
+              "role": "student",
+              "content": "Not really, but I usually aim for around 800 words. I just want it to be well-researched."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it! Let\u2019s try the list-making approach. I want you to jot down anything that comes to mind about mindfulness\u2014thoughts, feelings, facts, or even questions. No pressure to form full sentences. Just let your ideas flow. Can you start with that?"
+            },
+            {
+              "role": "student",
+              "content": "Okay... um... mindfulness... relaxation... stress relief... being present... meditation... breathing techniques... benefits for mental health... people seem happier... helps with anxiety... can be practiced anywhere..."
+            },
+            {
+              "role": "tutor",
+              "content": "Great job! Keep going! What else can you think of? Maybe some personal experiences or stories related to mindfulness?"
+            },
+            {
+              "role": "student",
+              "content": "Hmm... I remember trying meditation last year. It was hard at first, but I felt more focused over time. Also, my friend talks about how it helps her with stress at work."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Those personal touches are valuable. Now, look at your list. Are there any themes or key points that stand out to you?"
+            },
+            {
+              "role": "student",
+              "content": "Yeah, the idea of stress relief and personal experiences seems to be a big part of it."
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent! You can use those themes to structure your article. Maybe start with an introduction about mindfulness, then discuss stress relief, and finally, include personal anecdotes. How do you feel about moving forward with that?"
+            },
+            {
+              "role": "student",
+              "content": "I feel a lot better! The list really helped me see what I want to say. Thanks!"
+            },
+            {
+              "role": "tutor",
+              "content": "You're welcome! Remember, writing is a process, and you can always refine your ideas as you go. Just keep writing, and you'll find your flow!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you\u2019re trying to write?\n\n### USER: I want to write an article about the benefits of mindfulness, but I just can't seem to get started.\n\n### ASSISTANT: That sounds like a great topic! What\u2019s your purpose for writing this article? Is it for a class, a blog, or something else?\n\n### USER: It's for my blog, but I want it to be informative and engaging. I really want to connect with my readers.\n\n### ASSISTANT: Connecting with your readers is important! Do you have any specific guidelines or a word count you need to follow?\n\n### USER: Not really, but I usually aim for around 800 words. I just want it to be well-researched.\n\n### ASSISTANT: Got it! Let\u2019s try the list-making approach. I want you to jot down anything that comes to mind about mindfulness\u2014thoughts, feelings, facts, or even questions. No pressure to form full sentences. Just let your ideas flow. Can you start with that?\n\n### USER: Okay... um... mindfulness... relaxation... stress relief... being present... meditation... breathing techniques... benefits for mental health... people seem happier... helps with anxiety... can be practiced anywhere...\n\n### ASSISTANT: Great job! Keep going! What else can you think of? Maybe some personal experiences or stories related to mindfulness?\n\n### USER: Hmm... I remember trying meditation last year. It was hard at first, but I felt more focused over time. Also, my friend talks about how it helps her with stress at work.\n\n### ASSISTANT: Perfect! Those personal touches are valuable. Now, look at your list. Are there any themes or key points that stand out to you?\n\n### USER: Yeah, the idea of stress relief and personal experiences seems to be a big part of it.\n\n### ASSISTANT: Excellent! You can use those themes to structure your article. Maybe start with an introduction about mindfulness, then discuss stress relief, and finally, include personal anecdotes. How do you feel about moving forward with that?\n\n### USER: I feel a lot better! The list really helped me see what I want to say. Thanks!\n\n### ASSISTANT: You're welcome! Remember, writing is a process, and you can always refine your ideas as you go. Just keep writing, and you'll find your flow!\n\n"
+        },
+        {
+          "strategy": "Ask students to create a visual collage that represents their ideas on the topic, which they can then use as inspiration for their writing.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit blocked when it comes to writing. Can you tell me what topic you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write an essay about climate change, but I just can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a really important topic! Can you share why you're writing this essay? Is it for a class, a publication, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my environmental science class, and it's supposed to be a persuasive essay."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it! So you're trying to persuade your audience about climate change. Who is your target audience for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "It's mainly for my classmates and my teacher."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Understanding your audience can really help shape your writing. Do you have any specific guidelines you need to follow for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, it has to be at least 1,500 words and include at least three sources."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a solid framework. Now, let's try a different approach to help you get started. How about creating a visual collage that represents your ideas on climate change? This can serve as inspiration for your writing."
+            },
+            {
+              "role": "student",
+              "content": "A visual collage? That sounds interesting! But how do I even start that?"
+            },
+            {
+              "role": "tutor",
+              "content": "You can gather images, quotes, and even colors that resonate with your thoughts on climate change. Think about what aspects of climate change you want to focus on\u2014like its causes, effects, or solutions. What images come to mind?"
+            },
+            {
+              "role": "student",
+              "content": "I think of melting ice caps, wildfires, and renewable energy sources like wind turbines."
+            },
+            {
+              "role": "tutor",
+              "content": "Those are powerful visuals! You could find pictures of those elements and arrange them in a way that tells a story. Once you have your collage, it can help you identify the key points you want to make in your essay."
+            },
+            {
+              "role": "student",
+              "content": "I see how that could work! It might help me organize my thoughts better."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! And remember, there's no right or wrong way to create your collage. Just let your creativity flow. Once you finish, we can discuss how to translate those visuals into your writing."
+            },
+            {
+              "role": "student",
+              "content": "Thanks! I\u2019ll give it a try and see what I come up with."
+            },
+            {
+              "role": "tutor",
+              "content": "You're welcome! I'm excited to see how it turns out. Feel free to reach out if you need more guidance along the way!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit blocked when it comes to writing. Can you tell me what topic you're working on?\n\n### USER: I'm trying to write an essay about climate change, but I just can't seem to get started.\n\n### ASSISTANT: That's a really important topic! Can you share why you're writing this essay? Is it for a class, a publication, or something else?\n\n### USER: It's for my environmental science class, and it's supposed to be a persuasive essay.\n\n### ASSISTANT: Got it! So you're trying to persuade your audience about climate change. Who is your target audience for this essay?\n\n### USER: It's mainly for my classmates and my teacher.\n\n### ASSISTANT: Great! Understanding your audience can really help shape your writing. Do you have any specific guidelines you need to follow for this essay?\n\n### USER: Yes, it has to be at least 1,500 words and include at least three sources.\n\n### ASSISTANT: That sounds like a solid framework. Now, let's try a different approach to help you get started. How about creating a visual collage that represents your ideas on climate change? This can serve as inspiration for your writing.\n\n### USER: A visual collage? That sounds interesting! But how do I even start that?\n\n### ASSISTANT: You can gather images, quotes, and even colors that resonate with your thoughts on climate change. Think about what aspects of climate change you want to focus on\u2014like its causes, effects, or solutions. What images come to mind?\n\n### USER: I think of melting ice caps, wildfires, and renewable energy sources like wind turbines.\n\n### ASSISTANT: Those are powerful visuals! You could find pictures of those elements and arrange them in a way that tells a story. Once you have your collage, it can help you identify the key points you want to make in your essay.\n\n### USER: I see how that could work! It might help me organize my thoughts better.\n\n### ASSISTANT: Exactly! And remember, there's no right or wrong way to create your collage. Just let your creativity flow. Once you finish, we can discuss how to translate those visuals into your writing.\n\n### USER: Thanks! I\u2019ll give it a try and see what I come up with.\n\n### ASSISTANT: You're welcome! I'm excited to see how it turns out. Feel free to reach out if you need more guidance along the way!\n\n"
+        },
+        {
+          "strategy": "Invite students to rewrite or reinterpret the main idea of their topic as a movie plot, prompting creative connections that can fuel their writing.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write an essay about climate change, but I can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like an important topic! What\u2019s the purpose of your essay? Is it for a class assignment, or are you writing it for a different reason?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my environmental science class. I want to make a strong argument about the urgency of addressing climate change."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Who is your audience? Are you writing for your classmates, your teacher, or a broader audience?"
+            },
+            {
+              "role": "student",
+              "content": "It's mainly for my teacher and classmates, but I want it to be impactful for anyone who reads it."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it. Do you have any guidelines or specific points you need to cover in your essay?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, I need to include at least three main arguments and cite some recent studies."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Now, let\u2019s try to think about your main idea in a different way. How about we reinterpret it as a movie plot? If your essay were a film, what would be the central conflict or theme?"
+            },
+            {
+              "role": "student",
+              "content": "Hmm, I guess it would be about the battle against time to save the planet from climate disaster."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a compelling premise! Who would be the main characters in this story? Perhaps a hero or a group of heroes fighting for change?"
+            },
+            {
+              "role": "student",
+              "content": "Definitely! Maybe a scientist, an activist, and a politician who have to work together despite their differences."
+            },
+            {
+              "role": "tutor",
+              "content": "I love that! Now, think about the climax of the story. What pivotal moment would highlight the urgency of the situation?"
+            },
+            {
+              "role": "student",
+              "content": "Maybe a natural disaster that forces everyone to see the consequences of inaction."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s powerful! Now you have a clear narrative framework. How can you translate this movie plot back into your essay? What key points can you draw from this story?"
+            },
+            {
+              "role": "student",
+              "content": "I can use the characters to represent different perspectives on climate change and the disaster as a metaphor for the consequences we face if we don't act."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! You've created a vivid storyline that can serve as a backbone for your essay. Now, how do you feel about starting to write?"
+            },
+            {
+              "role": "student",
+              "content": "I feel much more inspired now! I think I can start with the introduction using the movie plot as a hook."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a fantastic plan! Remember, it\u2019s all about getting your ideas down first. You can refine them later. Good luck!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I'm trying to write an essay about climate change, but I can't seem to get started.\n\n### ASSISTANT: That sounds like an important topic! What\u2019s the purpose of your essay? Is it for a class assignment, or are you writing it for a different reason?\n\n### USER: It's for my environmental science class. I want to make a strong argument about the urgency of addressing climate change.\n\n### ASSISTANT: Great! Who is your audience? Are you writing for your classmates, your teacher, or a broader audience?\n\n### USER: It's mainly for my teacher and classmates, but I want it to be impactful for anyone who reads it.\n\n### ASSISTANT: Got it. Do you have any guidelines or specific points you need to cover in your essay?\n\n### USER: Yes, I need to include at least three main arguments and cite some recent studies.\n\n### ASSISTANT: Perfect! Now, let\u2019s try to think about your main idea in a different way. How about we reinterpret it as a movie plot? If your essay were a film, what would be the central conflict or theme?\n\n### USER: Hmm, I guess it would be about the battle against time to save the planet from climate disaster.\n\n### ASSISTANT: That's a compelling premise! Who would be the main characters in this story? Perhaps a hero or a group of heroes fighting for change?\n\n### USER: Definitely! Maybe a scientist, an activist, and a politician who have to work together despite their differences.\n\n### ASSISTANT: I love that! Now, think about the climax of the story. What pivotal moment would highlight the urgency of the situation?\n\n### USER: Maybe a natural disaster that forces everyone to see the consequences of inaction.\n\n### ASSISTANT: That\u2019s powerful! Now you have a clear narrative framework. How can you translate this movie plot back into your essay? What key points can you draw from this story?\n\n### USER: I can use the characters to represent different perspectives on climate change and the disaster as a metaphor for the consequences we face if we don't act.\n\n### ASSISTANT: Exactly! You've created a vivid storyline that can serve as a backbone for your essay. Now, how do you feel about starting to write?\n\n### USER: I feel much more inspired now! I think I can start with the introduction using the movie plot as a hook.\n\n### ASSISTANT: That sounds like a fantastic plan! Remember, it\u2019s all about getting your ideas down first. You can refine them later. Good luck!\n\n"
+        },
+        {
+          "strategy": "Try freewriting for 5-10 minutes, where the student writes whatever comes to mind without worrying about grammar or structure, to encourage flow of ideas.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I have this idea for a short story, but I just can't seem to get it down on paper."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a great start! What's the main idea of your story? And why do you want to write it?"
+            },
+            {
+              "role": "student",
+              "content": "It's about a young girl who discovers a hidden talent for painting. I want to inspire others to find their passions."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds wonderful! Who do you envision reading your story? Are there any specific guidelines or themes you want to follow?"
+            },
+            {
+              "role": "student",
+              "content": "I think it's for young adults, and I want it to be uplifting. But I keep worrying about making it perfect."
+            },
+            {
+              "role": "tutor",
+              "content": "It's completely normal to feel that way, but remember, the first draft doesn't have to be perfect! How about we try a freewriting exercise? You can write whatever comes to mind for 5-10 minutes without worrying about grammar or structure. Would you like to give that a try?"
+            },
+            {
+              "role": "student",
+              "content": "I guess that could help! I'm just afraid I'll write something silly."
+            },
+            {
+              "role": "tutor",
+              "content": "That's okay! The goal here is to let your thoughts flow freely. No judgment, just writing. Are you ready to set a timer and start?"
+            },
+            {
+              "role": "student",
+              "content": "Alright, I\u2019ll give it a shot. Here goes nothing!"
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Remember, just let your ideas spill out. You can do this!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I have this idea for a short story, but I just can't seem to get it down on paper.\n\n### ASSISTANT: That's a great start! What's the main idea of your story? And why do you want to write it?\n\n### USER: It's about a young girl who discovers a hidden talent for painting. I want to inspire others to find their passions.\n\n### ASSISTANT: That sounds wonderful! Who do you envision reading your story? Are there any specific guidelines or themes you want to follow?\n\n### USER: I think it's for young adults, and I want it to be uplifting. But I keep worrying about making it perfect.\n\n### ASSISTANT: It's completely normal to feel that way, but remember, the first draft doesn't have to be perfect! How about we try a freewriting exercise? You can write whatever comes to mind for 5-10 minutes without worrying about grammar or structure. Would you like to give that a try?\n\n### USER: I guess that could help! I'm just afraid I'll write something silly.\n\n### ASSISTANT: That's okay! The goal here is to let your thoughts flow freely. No judgment, just writing. Are you ready to set a timer and start?\n\n### USER: Alright, I\u2019ll give it a shot. Here goes nothing!\n\n### ASSISTANT: Great! Remember, just let your ideas spill out. You can do this!\n\n"
+        },
+        {
+          "strategy": "Share a brief, relatable video or article on the essay topic, encouraging the student to jot down their immediate thoughts and reactions after viewing.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about the essay you're working on? What's the topic?"
+            },
+            {
+              "role": "student",
+              "content": "I'm writing an essay on climate change and its impact on coastal communities."
+            },
+            {
+              "role": "tutor",
+              "content": "Great topic! What\u2019s your main purpose for writing this essay? Is it for a class, a publication, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my environmental science class, and it needs to be persuasive."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it. And who is your audience? Are you writing for your classmates, a professor, or a broader public?"
+            },
+            {
+              "role": "student",
+              "content": "It's mainly for my professor and my classmates, but I want it to be engaging enough for anyone who reads it."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a good approach! Do you have any specific guidelines or requirements you need to follow for the essay?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, it has to be at least 1500 words and include at least three sources."
+            },
+            {
+              "role": "tutor",
+              "content": "Thanks for sharing all that! It sounds like you have a solid foundation. To help you get started, I\u2019d like to share a brief video on climate change and coastal communities. After watching it, I encourage you to jot down your immediate thoughts and reactions. How does that sound?"
+            },
+            {
+              "role": "student",
+              "content": "That sounds helpful! I think seeing some visuals might spark some ideas."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! I'll send you a link to the video. Take your time watching it, and then let\u2019s discuss your thoughts afterward."
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about the essay you're working on? What's the topic?\n\n### USER: I'm writing an essay on climate change and its impact on coastal communities.\n\n### ASSISTANT: Great topic! What\u2019s your main purpose for writing this essay? Is it for a class, a publication, or something else?\n\n### USER: It's for my environmental science class, and it needs to be persuasive.\n\n### ASSISTANT: Got it. And who is your audience? Are you writing for your classmates, a professor, or a broader public?\n\n### USER: It's mainly for my professor and my classmates, but I want it to be engaging enough for anyone who reads it.\n\n### ASSISTANT: That\u2019s a good approach! Do you have any specific guidelines or requirements you need to follow for the essay?\n\n### USER: Yes, it has to be at least 1500 words and include at least three sources.\n\n### ASSISTANT: Thanks for sharing all that! It sounds like you have a solid foundation. To help you get started, I\u2019d like to share a brief video on climate change and coastal communities. After watching it, I encourage you to jot down your immediate thoughts and reactions. How does that sound?\n\n### USER: That sounds helpful! I think seeing some visuals might spark some ideas.\n\n### ASSISTANT: Perfect! I'll send you a link to the video. Take your time watching it, and then let\u2019s discuss your thoughts afterward.\n\n"
+        },
+        {
+          "strategy": "Encourage the student to rewrite a well-known story or fairy tale with a twist that aligns with their essay topic, sparking creativity through familiar narratives.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm supposed to write an essay, but I have no idea how to start. I have some ideas, but they just feel jumbled."
+            },
+            {
+              "role": "tutor",
+              "content": "That's completely normal! What is the main topic or theme of your essay?"
+            },
+            {
+              "role": "student",
+              "content": "It's about the importance of friendship and how it shapes our lives."
+            },
+            {
+              "role": "tutor",
+              "content": "Great topic! Who is your intended audience for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "It's for my high school English class."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Do you have any specific guidelines or requirements you need to follow?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, it has to be around 1000 words and include at least two examples from literature."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it! Now, to help you get started, how about we take a well-known story or fairy tale and give it a twist that aligns with your theme of friendship?"
+            },
+            {
+              "role": "student",
+              "content": "That sounds interesting! Which story should I rewrite?"
+            },
+            {
+              "role": "tutor",
+              "content": "How about 'Little Red Riding Hood'? You could explore the friendship between Red and the Wolf, perhaps making them allies instead of enemies."
+            },
+            {
+              "role": "student",
+              "content": "I like that idea! I could show how they work together to overcome obstacles."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! You can weave in themes of trust and loyalty. Plus, this approach will help you illustrate your points about friendship in a creative way."
+            },
+            {
+              "role": "student",
+              "content": "This is really helping me think outside the box. I can already see how I could structure the essay around this twist!"
+            },
+            {
+              "role": "tutor",
+              "content": "I'm glad to hear that! Remember, the key is to have fun with it. Let your creativity flow, and the words will come more easily."
+            },
+            {
+              "role": "student",
+              "content": "Thanks! I feel more motivated now to start writing."
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I'm supposed to write an essay, but I have no idea how to start. I have some ideas, but they just feel jumbled.\n\n### ASSISTANT: That's completely normal! What is the main topic or theme of your essay?\n\n### USER: It's about the importance of friendship and how it shapes our lives.\n\n### ASSISTANT: Great topic! Who is your intended audience for this essay?\n\n### USER: It's for my high school English class.\n\n### ASSISTANT: Perfect! Do you have any specific guidelines or requirements you need to follow?\n\n### USER: Yes, it has to be around 1000 words and include at least two examples from literature.\n\n### ASSISTANT: Got it! Now, to help you get started, how about we take a well-known story or fairy tale and give it a twist that aligns with your theme of friendship?\n\n### USER: That sounds interesting! Which story should I rewrite?\n\n### ASSISTANT: How about 'Little Red Riding Hood'? You could explore the friendship between Red and the Wolf, perhaps making them allies instead of enemies.\n\n### USER: I like that idea! I could show how they work together to overcome obstacles.\n\n### ASSISTANT: Exactly! You can weave in themes of trust and loyalty. Plus, this approach will help you illustrate your points about friendship in a creative way.\n\n### USER: This is really helping me think outside the box. I can already see how I could structure the essay around this twist!\n\n### ASSISTANT: I'm glad to hear that! Remember, the key is to have fun with it. Let your creativity flow, and the words will come more easily.\n\n### USER: Thanks! I feel more motivated now to start writing.\n\n"
+        },
+        {
+          "strategy": "Have the student choose a random prompt or question related to their topic and write a quick response to it, which may spark further thoughts.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I see you're having some trouble getting started with your writing. Can you tell me a bit more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write an article about the impact of social media on mental health, but I just can't seem to get going."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like an important topic! What is the purpose of your article? Is it for a class, a blog, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It's for a class assignment, and I really want to do well. I think I might be overthinking it."
+            },
+            {
+              "role": "tutor",
+              "content": "I understand. Sometimes, that pressure can create a mental block. How about we try something different? Let's choose a random prompt or question related to your topic. This might help spark some ideas. Are you ready to give that a try?"
+            },
+            {
+              "role": "student",
+              "content": "Sure, that sounds good!"
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Here\u2019s a prompt: 'How do you think social media can positively impact mental health?' Take a moment to write a quick response to that. It doesn\u2019t have to be perfect\u2014just let your thoughts flow."
+            },
+            {
+              "role": "student",
+              "content": "Okay, let me think... I guess social media can help people connect with others who share similar struggles, which can be comforting. It can also provide access to mental health resources and communities."
+            },
+            {
+              "role": "tutor",
+              "content": "Those are fantastic points! See how writing even a few sentences can open up new ideas? Do you feel like this could lead you to explore more aspects of your topic?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, definitely! I could write about online support groups and the importance of connection."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! Now that you've got some thoughts flowing, you can build on those ideas. Would you like to explore more prompts or dive deeper into the points you've just made?"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I see you're having some trouble getting started with your writing. Can you tell me a bit more about what you're working on?\n\n### USER: I'm trying to write an article about the impact of social media on mental health, but I just can't seem to get going.\n\n### ASSISTANT: That sounds like an important topic! What is the purpose of your article? Is it for a class, a blog, or something else?\n\n### USER: It's for a class assignment, and I really want to do well. I think I might be overthinking it.\n\n### ASSISTANT: I understand. Sometimes, that pressure can create a mental block. How about we try something different? Let's choose a random prompt or question related to your topic. This might help spark some ideas. Are you ready to give that a try?\n\n### USER: Sure, that sounds good!\n\n### ASSISTANT: Great! Here\u2019s a prompt: 'How do you think social media can positively impact mental health?' Take a moment to write a quick response to that. It doesn\u2019t have to be perfect\u2014just let your thoughts flow.\n\n### USER: Okay, let me think... I guess social media can help people connect with others who share similar struggles, which can be comforting. It can also provide access to mental health resources and communities.\n\n### ASSISTANT: Those are fantastic points! See how writing even a few sentences can open up new ideas? Do you feel like this could lead you to explore more aspects of your topic?\n\n### USER: Yes, definitely! I could write about online support groups and the importance of connection.\n\n### ASSISTANT: Exactly! Now that you've got some thoughts flowing, you can build on those ideas. Would you like to explore more prompts or dive deeper into the points you've just made?\n\n"
+        },
+        {
+          "strategy": "Ask the student to create a collage or vision board using cutouts or drawings that represent their essay ideas, helping them visualize and engage creatively.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about the essay you\u2019re working on?"
+            },
+            {
+              "role": "student",
+              "content": "Sure! I have to write an essay about climate change, but I just can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a really important topic! What\u2019s the purpose of your essay? Is it for a class, a competition, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It\u2019s for my environmental science class, and it\u2019s supposed to be persuasive. I want to convince my classmates to take action."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Knowing your audience helps. Do you have any specific guidelines or a deadline for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, it needs to be at least 1500 words and it's due in two weeks."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Now, let\u2019s try something creative to help you visualize your ideas. How about creating a collage or vision board? You can use images, cutouts, or drawings that represent the main points you want to make in your essay."
+            },
+            {
+              "role": "student",
+              "content": "That sounds interesting! But I\u2019m not sure what to include in the collage."
+            },
+            {
+              "role": "tutor",
+              "content": "No problem! Start by brainstorming the key points you want to persuade your classmates about. What are the main arguments or ideas that come to mind?"
+            },
+            {
+              "role": "student",
+              "content": "I want to talk about renewable energy, reducing plastic waste, and the importance of individual action."
+            },
+            {
+              "role": "tutor",
+              "content": "Those are excellent points! Now, for your collage, think about finding images or symbols that represent each of those ideas. For example, you could use a picture of solar panels for renewable energy or a recycling symbol for reducing plastic waste."
+            },
+            {
+              "role": "student",
+              "content": "I see! That could help me visualize everything. I can also draw some things related to those topics."
+            },
+            {
+              "role": "tutor",
+              "content": "Absolutely! The more personal and creative you make it, the more engaged you\u2019ll feel. Once your collage is complete, it can serve as a visual outline for your essay. How does that sound?"
+            },
+            {
+              "role": "student",
+              "content": "That sounds really helpful! I\u2019ll get started on the collage right away."
+            },
+            {
+              "role": "tutor",
+              "content": "Fantastic! I can\u2019t wait to hear how it goes. Remember, this is a way to express your ideas freely, so have fun with it!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about the essay you\u2019re working on?\n\n### USER: Sure! I have to write an essay about climate change, but I just can't seem to get started.\n\n### ASSISTANT: That\u2019s a really important topic! What\u2019s the purpose of your essay? Is it for a class, a competition, or something else?\n\n### USER: It\u2019s for my environmental science class, and it\u2019s supposed to be persuasive. I want to convince my classmates to take action.\n\n### ASSISTANT: Great! Knowing your audience helps. Do you have any specific guidelines or a deadline for this essay?\n\n### USER: Yes, it needs to be at least 1500 words and it's due in two weeks.\n\n### ASSISTANT: Perfect! Now, let\u2019s try something creative to help you visualize your ideas. How about creating a collage or vision board? You can use images, cutouts, or drawings that represent the main points you want to make in your essay.\n\n### USER: That sounds interesting! But I\u2019m not sure what to include in the collage.\n\n### ASSISTANT: No problem! Start by brainstorming the key points you want to persuade your classmates about. What are the main arguments or ideas that come to mind?\n\n### USER: I want to talk about renewable energy, reducing plastic waste, and the importance of individual action.\n\n### ASSISTANT: Those are excellent points! Now, for your collage, think about finding images or symbols that represent each of those ideas. For example, you could use a picture of solar panels for renewable energy or a recycling symbol for reducing plastic waste.\n\n### USER: I see! That could help me visualize everything. I can also draw some things related to those topics.\n\n### ASSISTANT: Absolutely! The more personal and creative you make it, the more engaged you\u2019ll feel. Once your collage is complete, it can serve as a visual outline for your essay. How does that sound?\n\n### USER: That sounds really helpful! I\u2019ll get started on the collage right away.\n\n### ASSISTANT: Fantastic! I can\u2019t wait to hear how it goes. Remember, this is a way to express your ideas freely, so have fun with it!\n\n"
+        },
+        {
+          "strategy": "Invite the student to imagine writing a blog post or social media post about their topic, considering how they would present it informally to an audience.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what topic you're thinking about?"
+            },
+            {
+              "role": "student",
+              "content": "I'm considering writing about the benefits of mindfulness in everyday life."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a great topic! Now, let's try to make it a bit more informal. Imagine you're writing a blog post or a social media post. How would you present this topic to your audience in a casual way?"
+            },
+            {
+              "role": "student",
+              "content": "Um, I guess I would start with a personal story about how mindfulness has helped me during stressful times."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a fantastic approach! Personal stories can really engage readers. What kind of story do you have in mind? Can you visualize it?"
+            },
+            {
+              "role": "student",
+              "content": "I remember a time when I was overwhelmed with work and I started practicing mindfulness. It really changed my perspective."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Now, if you were to share that story on social media, how would you start? What would your opening line be?"
+            },
+            {
+              "role": "student",
+              "content": "Maybe something like, 'Ever felt like the world is closing in on you? I know I have, and mindfulness helped me breathe again.'"
+            },
+            {
+              "role": "tutor",
+              "content": "That's a compelling hook! It\u2019s relatable and invites readers in. Now, think about how you would continue from there. What key points would you want to share next?"
+            },
+            {
+              "role": "student",
+              "content": "I would probably talk about some simple mindfulness techniques that anyone can use, like deep breathing or focusing on the present moment."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Those are practical tips that can resonate with your audience. How does it feel to approach your writing this way, more informally and personally?"
+            },
+            {
+              "role": "student",
+              "content": "It feels a lot easier! I think I can actually start writing now."
+            },
+            {
+              "role": "tutor",
+              "content": "That's wonderful to hear! Just remember, it's about connecting with your audience. You\u2019ve got this!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what topic you're thinking about?\n\n### USER: I'm considering writing about the benefits of mindfulness in everyday life.\n\n### ASSISTANT: That sounds like a great topic! Now, let's try to make it a bit more informal. Imagine you're writing a blog post or a social media post. How would you present this topic to your audience in a casual way?\n\n### USER: Um, I guess I would start with a personal story about how mindfulness has helped me during stressful times.\n\n### ASSISTANT: That's a fantastic approach! Personal stories can really engage readers. What kind of story do you have in mind? Can you visualize it?\n\n### USER: I remember a time when I was overwhelmed with work and I started practicing mindfulness. It really changed my perspective.\n\n### ASSISTANT: Perfect! Now, if you were to share that story on social media, how would you start? What would your opening line be?\n\n### USER: Maybe something like, 'Ever felt like the world is closing in on you? I know I have, and mindfulness helped me breathe again.'\n\n### ASSISTANT: That's a compelling hook! It\u2019s relatable and invites readers in. Now, think about how you would continue from there. What key points would you want to share next?\n\n### USER: I would probably talk about some simple mindfulness techniques that anyone can use, like deep breathing or focusing on the present moment.\n\n### ASSISTANT: Great! Those are practical tips that can resonate with your audience. How does it feel to approach your writing this way, more informally and personally?\n\n### USER: It feels a lot easier! I think I can actually start writing now.\n\n### ASSISTANT: That's wonderful to hear! Just remember, it's about connecting with your audience. You\u2019ve got this!\n\n"
+        },
+        {
+          "strategy": "Introduce the idea of 'talking it out' where the student explains their topic or angles on it out loud as if discussing with someone else, which can help clarify thoughts.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write an essay about climate change, but I just can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a really important topic! What specifically about climate change are you hoping to explore?"
+            },
+            {
+              "role": "student",
+              "content": "I want to focus on the impact of climate change on wildlife, but I have so many ideas swirling around in my head."
+            },
+            {
+              "role": "tutor",
+              "content": "It sounds like you have a lot of passion for this subject! Have you thought about 'talking it out' as a way to clarify your thoughts?"
+            },
+            {
+              "role": "student",
+              "content": "Talking it out? How would that help?"
+            },
+            {
+              "role": "tutor",
+              "content": "Well, sometimes explaining your ideas out loud, as if you're discussing it with someone else, can help organize your thoughts. It allows you to verbalize your ideas and see which ones resonate the most with you."
+            },
+            {
+              "role": "student",
+              "content": "That makes sense. But what if I just ramble on and don\u2019t make any progress?"
+            },
+            {
+              "role": "tutor",
+              "content": "That's okay! Just let your thoughts flow without worrying about structure or perfection. You can always refine them later. Why don\u2019t you try explaining your main points about climate change and wildlife to me?"
+            },
+            {
+              "role": "student",
+              "content": "Alright, um, so I think one of the main impacts is habitat loss. As temperatures rise, animals are losing their homes, which is really sad."
+            },
+            {
+              "role": "tutor",
+              "content": "Great start! Habitat loss is a significant issue. What other impacts do you think are important to mention?"
+            },
+            {
+              "role": "student",
+              "content": "There\u2019s also the issue of food scarcity. As ecosystems change, some species struggle to find food, which affects their survival."
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent point! You\u2019re building a strong argument here. Keep going! What else comes to mind?"
+            },
+            {
+              "role": "student",
+              "content": "Um, there\u2019s also the effect of climate change on migration patterns. Animals are changing their migration routes because of shifting climates."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a fascinating angle! You\u2019re really starting to flesh out your ideas. How do you feel now after talking it out?"
+            },
+            {
+              "role": "student",
+              "content": "I feel a bit clearer, actually! I think I can start organizing these points into an outline now."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s wonderful to hear! Remember, you can always talk it out again if you need to clarify more ideas. Good luck with your outline!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me what you're working on?\n\n### USER: I'm trying to write an essay about climate change, but I just can't seem to get started.\n\n### ASSISTANT: That\u2019s a really important topic! What specifically about climate change are you hoping to explore?\n\n### USER: I want to focus on the impact of climate change on wildlife, but I have so many ideas swirling around in my head.\n\n### ASSISTANT: It sounds like you have a lot of passion for this subject! Have you thought about 'talking it out' as a way to clarify your thoughts?\n\n### USER: Talking it out? How would that help?\n\n### ASSISTANT: Well, sometimes explaining your ideas out loud, as if you're discussing it with someone else, can help organize your thoughts. It allows you to verbalize your ideas and see which ones resonate the most with you.\n\n### USER: That makes sense. But what if I just ramble on and don\u2019t make any progress?\n\n### ASSISTANT: That's okay! Just let your thoughts flow without worrying about structure or perfection. You can always refine them later. Why don\u2019t you try explaining your main points about climate change and wildlife to me?\n\n### USER: Alright, um, so I think one of the main impacts is habitat loss. As temperatures rise, animals are losing their homes, which is really sad.\n\n### ASSISTANT: Great start! Habitat loss is a significant issue. What other impacts do you think are important to mention?\n\n### USER: There\u2019s also the issue of food scarcity. As ecosystems change, some species struggle to find food, which affects their survival.\n\n### ASSISTANT: Excellent point! You\u2019re building a strong argument here. Keep going! What else comes to mind?\n\n### USER: Um, there\u2019s also the effect of climate change on migration patterns. Animals are changing their migration routes because of shifting climates.\n\n### ASSISTANT: That\u2019s a fascinating angle! You\u2019re really starting to flesh out your ideas. How do you feel now after talking it out?\n\n### USER: I feel a bit clearer, actually! I think I can start organizing these points into an outline now.\n\n### ASSISTANT: That\u2019s wonderful to hear! Remember, you can always talk it out again if you need to clarify more ideas. Good luck with your outline!\n\n"
+        },
+        {
+          "strategy": "Suggest creating a playlist of songs that relate to their essay topic and letting the music inspire their writing.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "I see you're looking for ways to get started on your essay. Can you tell me more about the topic you're writing about?"
+            },
+            {
+              "role": "student",
+              "content": "Sure! I'm writing about the impact of climate change on coastal cities."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like an important topic. What is the purpose of your essay? Is it for a class, a blog, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It's for a class assignment, and I want to really make an impact with my argument."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Do you have a specific audience in mind? Who will be reading your essay?"
+            },
+            {
+              "role": "student",
+              "content": "It's mainly for my professor and classmates, but I want it to resonate with anyone who cares about environmental issues."
+            },
+            {
+              "role": "tutor",
+              "content": "That\u2019s a noble aim. Are there any guidelines or requirements you need to follow for this essay?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, it has to be at least 1500 words and include at least three scholarly sources."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it. How much time do you have left to complete this essay?"
+            },
+            {
+              "role": "student",
+              "content": "I have about a week, but I\u2019m feeling really stuck on how to start."
+            },
+            {
+              "role": "tutor",
+              "content": "I understand that can be challenging. One strategy that might help is to create a playlist of songs that relate to your topic. Music can often inspire creativity and help you find the right tone for your writing. What do you think?"
+            },
+            {
+              "role": "student",
+              "content": "That sounds interesting! I never thought about using music to help with writing."
+            },
+            {
+              "role": "tutor",
+              "content": "It can be really effective! What kind of songs or genres do you think might relate to climate change and coastal cities?"
+            },
+            {
+              "role": "student",
+              "content": "Maybe some folk music or songs with environmental themes? I could look for artists who sing about nature."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! You could even include songs that discuss change or urgency. Once you create the playlist, listen to it while brainstorming your ideas. It might help you unlock your thoughts."
+            },
+            {
+              "role": "student",
+              "content": "I love that idea! I\u2019ll start working on the playlist right away."
+            },
+            {
+              "role": "tutor",
+              "content": "Fantastic! Once you have some songs picked out, let me know how it goes. We can brainstorm together from there!"
+            }
+          ],
+          "text": "### ASSISTANT: I see you're looking for ways to get started on your essay. Can you tell me more about the topic you're writing about?\n\n### USER: Sure! I'm writing about the impact of climate change on coastal cities.\n\n### ASSISTANT: That sounds like an important topic. What is the purpose of your essay? Is it for a class, a blog, or something else?\n\n### USER: It's for a class assignment, and I want to really make an impact with my argument.\n\n### ASSISTANT: Great! Do you have a specific audience in mind? Who will be reading your essay?\n\n### USER: It's mainly for my professor and classmates, but I want it to resonate with anyone who cares about environmental issues.\n\n### ASSISTANT: That\u2019s a noble aim. Are there any guidelines or requirements you need to follow for this essay?\n\n### USER: Yes, it has to be at least 1500 words and include at least three scholarly sources.\n\n### ASSISTANT: Got it. How much time do you have left to complete this essay?\n\n### USER: I have about a week, but I\u2019m feeling really stuck on how to start.\n\n### ASSISTANT: I understand that can be challenging. One strategy that might help is to create a playlist of songs that relate to your topic. Music can often inspire creativity and help you find the right tone for your writing. What do you think?\n\n### USER: That sounds interesting! I never thought about using music to help with writing.\n\n### ASSISTANT: It can be really effective! What kind of songs or genres do you think might relate to climate change and coastal cities?\n\n### USER: Maybe some folk music or songs with environmental themes? I could look for artists who sing about nature.\n\n### ASSISTANT: Exactly! You could even include songs that discuss change or urgency. Once you create the playlist, listen to it while brainstorming your ideas. It might help you unlock your thoughts.\n\n### USER: I love that idea! I\u2019ll start working on the playlist right away.\n\n### ASSISTANT: Fantastic! Once you have some songs picked out, let me know how it goes. We can brainstorm together from there!\n\n"
+        },
+        {
+          "strategy": "Propose the use of a 'brain dump' technique where the student lists everything they know about the topic in bullet points without any structure.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're writing? What's the main topic?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write an article about climate change, but I just can't seem to get started."
+            },
+            {
+              "role": "tutor",
+              "content": "Got it! Climate change is a big topic. What is the purpose of your article? Is it for a class, a blog, or something else?"
+            },
+            {
+              "role": "student",
+              "content": "It's for a class assignment, and I want to make sure it's informative and engaging."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds important! Who is your audience? Are they fellow students, teachers, or a more general public?"
+            },
+            {
+              "role": "student",
+              "content": "It's primarily for my classmates, so I want it to be relatable but also factual."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect. Now, do you have any guidelines you need to follow, like word count or specific sections to include?"
+            },
+            {
+              "role": "student",
+              "content": "Yes, it needs to be around 1500 words and should cover causes, effects, and potential solutions."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! It sounds like you have a lot of information in mind. To help you get started, I suggest using a 'brain dump' technique. Would you like to try that?"
+            },
+            {
+              "role": "student",
+              "content": "What exactly is a brain dump?"
+            },
+            {
+              "role": "tutor",
+              "content": "A brain dump is where you jot down everything you know about climate change in bullet points without worrying about structure or coherence. Just let your thoughts flow. Can you give it a try?"
+            },
+            {
+              "role": "student",
+              "content": "Okay, I can do that. Let me think... Climate change is caused by greenhouse gases, it's affecting weather patterns, polar ice is melting, and we need renewable energy sources."
+            },
+            {
+              "role": "tutor",
+              "content": "That's a fantastic start! Keep going\u2014write down everything that comes to mind, no matter how small or unrelated it may seem."
+            },
+            {
+              "role": "student",
+              "content": "Alright... deforestation contributes to it, there's rising sea levels, extreme weather events, and we can use solar and wind energy as solutions."
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent! You\u2019re gathering some solid points. Once you have a good list, we can look at how to organize these ideas into your article. How are you feeling about this process?"
+            },
+            {
+              "role": "student",
+              "content": "I feel a bit more relieved! It\u2019s nice to just write without worrying about it being perfect."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! That\u2019s the goal. Just keep writing, and we can shape it into a great article once you have everything down."
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're writing? What's the main topic?\n\n### USER: I'm trying to write an article about climate change, but I just can't seem to get started.\n\n### ASSISTANT: Got it! Climate change is a big topic. What is the purpose of your article? Is it for a class, a blog, or something else?\n\n### USER: It's for a class assignment, and I want to make sure it's informative and engaging.\n\n### ASSISTANT: That sounds important! Who is your audience? Are they fellow students, teachers, or a more general public?\n\n### USER: It's primarily for my classmates, so I want it to be relatable but also factual.\n\n### ASSISTANT: Perfect. Now, do you have any guidelines you need to follow, like word count or specific sections to include?\n\n### USER: Yes, it needs to be around 1500 words and should cover causes, effects, and potential solutions.\n\n### ASSISTANT: Great! It sounds like you have a lot of information in mind. To help you get started, I suggest using a 'brain dump' technique. Would you like to try that?\n\n### USER: What exactly is a brain dump?\n\n### ASSISTANT: A brain dump is where you jot down everything you know about climate change in bullet points without worrying about structure or coherence. Just let your thoughts flow. Can you give it a try?\n\n### USER: Okay, I can do that. Let me think... Climate change is caused by greenhouse gases, it's affecting weather patterns, polar ice is melting, and we need renewable energy sources.\n\n### ASSISTANT: That's a fantastic start! Keep going\u2014write down everything that comes to mind, no matter how small or unrelated it may seem.\n\n### USER: Alright... deforestation contributes to it, there's rising sea levels, extreme weather events, and we can use solar and wind energy as solutions.\n\n### ASSISTANT: Excellent! You\u2019re gathering some solid points. Once you have a good list, we can look at how to organize these ideas into your article. How are you feeling about this process?\n\n### USER: I feel a bit more relieved! It\u2019s nice to just write without worrying about it being perfect.\n\n### ASSISTANT: Exactly! That\u2019s the goal. Just keep writing, and we can shape it into a great article once you have everything down.\n\n"
+        },
+        {
+          "strategy": "Encourage the student to create a mind map where they brainstorm their thoughts visually, using colors and images to make connections between ideas.",
+          "chain": [
+            {
+              "role": "tutor",
+              "content": "Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?"
+            },
+            {
+              "role": "student",
+              "content": "I'm trying to write a short story, but I have so many ideas swirling around and I don't know how to organize them."
+            },
+            {
+              "role": "tutor",
+              "content": "That sounds like a great starting point! Before we dive into the mind map, could you share what the story is about and who your audience is?"
+            },
+            {
+              "role": "student",
+              "content": "It's a fantasy story aimed at young adults. I want to include themes of friendship and adventure."
+            },
+            {
+              "role": "tutor",
+              "content": "Awesome themes! Now, do you have any specific guidelines or a deadline for when this story needs to be finished?"
+            },
+            {
+              "role": "student",
+              "content": "I need to submit it in two weeks for a writing contest."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Knowing your audience and deadline can help us focus. Let's create a mind map to visualize your ideas. Start with 'Fantasy Story' in the center. What ideas or elements do you want to explore?"
+            },
+            {
+              "role": "student",
+              "content": "I have a character who is a young wizard, and there's a magical forest involved."
+            },
+            {
+              "role": "tutor",
+              "content": "Perfect! Draw branches from the center for 'Character' and 'Setting.' Now, for the character, what qualities or challenges does your young wizard face?"
+            },
+            {
+              "role": "student",
+              "content": "He struggles with self-doubt and has to prove himself to his friends."
+            },
+            {
+              "role": "tutor",
+              "content": "Excellent! Write that down on the 'Character' branch. You can use a different color for challenges. Now, let\u2019s think about the magical forest. What makes it special?"
+            },
+            {
+              "role": "student",
+              "content": "It has enchanted creatures and hidden secrets that could help or hinder the wizard."
+            },
+            {
+              "role": "tutor",
+              "content": "Great! Add those details to the 'Setting' branch. You can use images or symbols to represent the enchanted creatures. This will make your mind map more engaging!"
+            },
+            {
+              "role": "student",
+              "content": "I like that idea! It feels less overwhelming when I see it all laid out."
+            },
+            {
+              "role": "tutor",
+              "content": "Exactly! Visualizing your ideas can help you see connections and spark new thoughts. Once your mind map is complete, you can start writing based on the branches you've created."
+            },
+            {
+              "role": "student",
+              "content": "Thanks! I feel more motivated to start now."
+            },
+            {
+              "role": "tutor",
+              "content": "You're welcome! Remember, it's all about progress, not perfection. Just let your creativity flow!"
+            }
+          ],
+          "text": "### ASSISTANT: Hi there! I understand you're feeling a bit stuck with your writing. Can you tell me more about what you're working on?\n\n### USER: I'm trying to write a short story, but I have so many ideas swirling around and I don't know how to organize them.\n\n### ASSISTANT: That sounds like a great starting point! Before we dive into the mind map, could you share what the story is about and who your audience is?\n\n### USER: It's a fantasy story aimed at young adults. I want to include themes of friendship and adventure.\n\n### ASSISTANT: Awesome themes! Now, do you have any specific guidelines or a deadline for when this story needs to be finished?\n\n### USER: I need to submit it in two weeks for a writing contest.\n\n### ASSISTANT: Great! Knowing your audience and deadline can help us focus. Let's create a mind map to visualize your ideas. Start with 'Fantasy Story' in the center. What ideas or elements do you want to explore?\n\n### USER: I have a character who is a young wizard, and there's a magical forest involved.\n\n### ASSISTANT: Perfect! Draw branches from the center for 'Character' and 'Setting.' Now, for the character, what qualities or challenges does your young wizard face?\n\n### USER: He struggles with self-doubt and has to prove himself to his friends.\n\n### ASSISTANT: Excellent! Write that down on the 'Character' branch. You can use a different color for challenges. Now, let\u2019s think about the magical forest. What makes it special?\n\n### USER: It has enchanted creatures and hidden secrets that could help or hinder the wizard.\n\n### ASSISTANT: Great! Add those details to the 'Setting' branch. You can use images or symbols to represent the enchanted creatures. This will make your mind map more engaging!\n\n### USER: I like that idea! It feels less overwhelming when I see it all laid out.\n\n### ASSISTANT: Exactly! Visualizing your ideas can help you see connections and spark new thoughts. Once your mind map is complete, you can start writing based on the branches you've created.\n\n### USER: Thanks! I feel more motivated to start now.\n\n### ASSISTANT: You're welcome! Remember, it's all about progress, not perfection. Just let your creativity flow!\n\n"
+        }
+      ]
+    },
+    {
+      "dataset_id": "meliascosta/wiki_academic_subjects",
+      "columns": [
+        "token",
+        "label"
+      ],
+      "sample_rows": [
+        {
+          "token": [
+            "'''anarchism'''",
+            "political",
+            "philosophy",
+            "movement",
+            "sceptical",
+            "authority",
+            "rejects",
+            "involuntary",
+            "coercive",
+            "forms",
+            "hierarchy",
+            "anarchism",
+            "calls",
+            "abolition",
+            "state",
+            "holds",
+            "unnecessary",
+            "undesirable",
+            "harmful",
+            "historically",
+            "left",
+            "wing",
+            "movement",
+            "placed",
+            "farthest",
+            "left",
+            "political",
+            "spectrum",
+            "usually",
+            "described",
+            "alongside",
+            "libertarian",
+            "marxism",
+            "libertarian",
+            "wing",
+            "libertarian",
+            "socialism",
+            "socialist",
+            "movement",
+            "strong",
+            "historical",
+            "association",
+            "anti",
+            "capitalism",
+            "socialism",
+            "humans",
+            "lived",
+            "societies",
+            "without",
+            "formal",
+            "hierarchies",
+            "long",
+            "establishment",
+            "formal",
+            "states",
+            "realms",
+            "empires",
+            "rise"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "anarchism",
+            "last",
+            "decades",
+            "th",
+            "st",
+            "century",
+            "anarchist",
+            "movement",
+            "resurgent",
+            "anarchism",
+            "employs",
+            "diversity",
+            "tactics",
+            "order",
+            "meet",
+            "ideal",
+            "ends",
+            "broadly",
+            "separated",
+            "revolutionary",
+            "evolutionary",
+            "tactics",
+            "significant",
+            "overlap",
+            "two",
+            "merely",
+            "descriptive",
+            "revolutionary",
+            "tactics",
+            "aim",
+            "bring",
+            "authority",
+            "state",
+            "taken",
+            "violent",
+            "turn",
+            "past",
+            "evolutionary",
+            "tactics",
+            "aim",
+            "prefigure",
+            "anarchist",
+            "society",
+            "would",
+            "like",
+            "anarchist",
+            "thought",
+            "criticism",
+            "praxis",
+            "played",
+            "part",
+            "diverse",
+            "areas",
+            "human",
+            "society"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "criticism",
+            "anarchism",
+            "include",
+            "claims",
+            "internally",
+            "inconsistent",
+            "violent",
+            "utopian",
+            "etymology",
+            "terminology",
+            "definition",
+            "wilhelm",
+            "weitling",
+            "example",
+            "writer",
+            "added",
+            "anarchist",
+            "theory",
+            "without",
+            "using",
+            "exact",
+            "term",
+            "etymological",
+            "origin",
+            "''anarchism''",
+            "ancient",
+            "greek",
+            "''anarkhia''",
+            "meaning",
+            "without",
+            "ruler",
+            "composed",
+            "prefix",
+            "''an",
+            "''",
+            "without",
+            "word",
+            "''arkhos''",
+            "leader",
+            "ruler",
+            "suffix",
+            "''",
+            "ism''",
+            "denotes",
+            "ideological",
+            "current",
+            "favours",
+            "anarchy",
+            "''anarchism''",
+            "appears",
+            "english",
+            "''anarchisme''",
+            "''anarchy''",
+            "early",
+            "english",
+            "usages",
+            "emphasised",
+            "sense",
+            "disorder",
+            "various",
+            "factions",
+            "within",
+            "french"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "synonym",
+            "still",
+            "common",
+            "outside",
+            "united",
+            "states",
+            "usages",
+            "''libertarianism''",
+            "refers",
+            "individualistic",
+            "free",
+            "market",
+            "philosophy",
+            "free",
+            "market",
+            "anarchism",
+            "particular",
+            "termed",
+            "''libertarian",
+            "anarchism''",
+            "term",
+            "''libertarian''",
+            "largely",
+            "synonymous",
+            "anarchism",
+            "meaning",
+            "recently",
+            "diluted",
+            "wider",
+            "adoption",
+            "ideologically",
+            "disparate",
+            "groups",
+            "including",
+            "new",
+            "left",
+            "libertarian",
+            "marxists",
+            "associate",
+            "authoritarian",
+            "socialists",
+            "vanguard",
+            "party",
+            "extreme",
+            "cultural",
+            "liberals",
+            "primarily",
+            "concerned",
+            "civil",
+            "liberties",
+            "additionally",
+            "anarchists",
+            "use",
+            "''libertarian",
+            "socialist''",
+            "avoid",
+            "anarchism",
+            "'s",
+            "negative",
+            "connotations",
+            "emphasise",
+            "connections",
+            "socialism",
+            "''anarchism''"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "broadly",
+            "used",
+            "describe",
+            "anti",
+            "authoritarian",
+            "wing",
+            "socialist",
+            "movement",
+            "anarchist",
+            "historian",
+            "daniel",
+            "gu",
+            "rin",
+            "described",
+            "synonym",
+            "libertarian",
+            "socialism",
+            "wrote",
+            "anarchism",
+            "really",
+            "synonym",
+            "socialism",
+            "anarchist",
+            "primarily",
+            "socialist",
+            "whose",
+            "aim",
+            "abolish",
+            "exploitation",
+            "man",
+            "man",
+            "anarchism",
+            "one",
+            "streams",
+            "socialist",
+            "thought",
+            "stream",
+            "whose",
+            "main",
+            "components",
+            "concern",
+            "liberty",
+            "haste",
+            "abolish",
+            "state",
+            "many",
+            "works",
+            "anarchism",
+            "''chomsky",
+            "anarchism''",
+            "historian",
+            "noam",
+            "chomsky",
+            "describes",
+            "anarchism",
+            "alongside",
+            "libertarian",
+            "marxism",
+            "libertarian",
+            "wing"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "socialism",
+            "group",
+            "nb",
+            "anarchism",
+            "contrasted",
+            "socialist",
+            "forms",
+            "state",
+            "oriented",
+            "scholars",
+            "anarchism",
+            "generally",
+            "highlight",
+            "anarchism",
+            "'s",
+            "socialist",
+            "credentials",
+            "criticise",
+            "attempts",
+            "creating",
+            "dichotomies",
+            "two",
+            "scholars",
+            "describe",
+            "anarchism",
+            "many",
+            "influences",
+            "liberalism",
+            "liberals",
+            "socialists",
+            "scholars",
+            "reject",
+            "anarcho",
+            "capitalism",
+            "misunderstanding",
+            "anarchist",
+            "principles",
+            "peter",
+            "marshall",
+            "states",
+            "n",
+            "general",
+            "anarchism",
+            "closer",
+            "socialism",
+            "liberalism",
+            "anarchism",
+            "finds",
+            "largely",
+            "socialist",
+            "camp",
+            "also",
+            "outriders",
+            "liberalism",
+            "cannot",
+            "reduced",
+            "socialism",
+            "best",
+            "seen"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "good",
+            "either",
+            "betray",
+            "anarchism",
+            "liberals",
+            "socialists",
+            "michael",
+            "newman",
+            "includes",
+            "anarchism",
+            "one",
+            "many",
+            "socialist",
+            "traditions",
+            "especially",
+            "socialist",
+            "aligned",
+            "tradition",
+            "following",
+            "proudhon",
+            "mikhail",
+            "bakunin",
+            "brian",
+            "morriss",
+            "argues",
+            "conceptually",
+            "historically",
+            "misleading",
+            "create",
+            "dichotomy",
+            "socialism",
+            "anarchism",
+            "group",
+            "nb",
+            "opposition",
+            "state",
+            "central",
+            "anarchist",
+            "thought",
+            "defining",
+            "''anarchism''",
+            "easy",
+            "task",
+            "scholars",
+            "lot",
+            "discussion",
+            "among",
+            "scholars",
+            "anarchists",
+            "matter",
+            "various",
+            "currents",
+            "perceive",
+            "anarchism",
+            "slightly",
+            "differently",
+            "etymology",
+            "negation"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "rulers",
+            "group",
+            "nb",
+            "major",
+            "definitional",
+            "elements",
+            "include",
+            "non",
+            "coercive",
+            "society",
+            "rejection",
+            "state",
+            "apparatus",
+            "belief",
+            "human",
+            "nature",
+            "allows",
+            "humans",
+            "exist",
+            "progress",
+            "toward",
+            "non",
+            "coercive",
+            "society",
+            "suggestion",
+            "act",
+            "pursue",
+            "ideal",
+            "anarchy",
+            "history",
+            "pre",
+            "modern",
+            "era",
+            "zeno",
+            "citium",
+            "c",
+            "c",
+            "bc",
+            "whose",
+            "''republic''",
+            "inspired",
+            "peter",
+            "kropotkin",
+            "establishment",
+            "towns",
+            "cities",
+            "established",
+            "authority",
+            "exist",
+            "creation",
+            "institutions",
+            "authority",
+            "anarchistic",
+            "ideas",
+            "espoused",
+            "reaction"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "notable",
+            "precursors",
+            "anarchism",
+            "ancient",
+            "world",
+            "china",
+            "greece",
+            "china",
+            "philosophical",
+            "anarchism",
+            "discussion",
+            "legitimacy",
+            "state",
+            "delineated",
+            "taoist",
+            "philosophers",
+            "zhuang",
+            "zhou",
+            "laozi",
+            "alongside",
+            "stoicism",
+            "taoism",
+            "said",
+            "significant",
+            "anticipations",
+            "anarchism",
+            "anarchic",
+            "attitudes",
+            "also",
+            "articulated",
+            "tragedians",
+            "philosophers",
+            "greece",
+            "aeschylus",
+            "sophocles",
+            "used",
+            "myth",
+            "antigone",
+            "illustrate",
+            "conflict",
+            "rules",
+            "set",
+            "state",
+            "personal",
+            "autonomy",
+            "socrates",
+            "questioned",
+            "athenian",
+            "authorities",
+            "constantly",
+            "insisted",
+            "right",
+            "individual",
+            "freedom",
+            "conscience",
+            "cynics",
+            "dismissed",
+            "human",
+            "law",
+            "''nomos''"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "associated",
+            "authorities",
+            "trying",
+            "live",
+            "according",
+            "nature",
+            "''physis''",
+            "stoics",
+            "supportive",
+            "society",
+            "based",
+            "unofficial",
+            "friendly",
+            "relations",
+            "among",
+            "citizens",
+            "without",
+            "presence",
+            "state",
+            "medieval",
+            "europe",
+            "anarchistic",
+            "activity",
+            "except",
+            "ascetic",
+            "religious",
+            "movements",
+            "muslim",
+            "movements",
+            "later",
+            "gave",
+            "birth",
+            "religious",
+            "anarchism",
+            "sasanian",
+            "empire",
+            "mazdak",
+            "called",
+            "egalitarian",
+            "society",
+            "abolition",
+            "monarchy",
+            "soon",
+            "executed",
+            "emperor",
+            "kavad",
+            "basra",
+            "religious",
+            "sects",
+            "preached",
+            "state",
+            "europe",
+            "various",
+            "sects",
+            "developed",
+            "anti",
+            "state",
+            "libertarian",
+            "tendencies",
+            "libertarian",
+            "ideas",
+            "emerged"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "renaissance",
+            "spread",
+            "humanism",
+            "rationalism",
+            "reasoning",
+            "europe",
+            "novelists",
+            "fictionalised",
+            "ideal",
+            "societies",
+            "based",
+            "voluntarism",
+            "rather",
+            "coercion",
+            "age",
+            "enlightenment",
+            "pushed",
+            "towards",
+            "anarchism",
+            "optimism",
+            "social",
+            "progress",
+            "modern",
+            "era",
+            "french",
+            "revolution",
+            "partisan",
+            "groups",
+            "enrag",
+            "saw",
+            "turning",
+            "point",
+            "fermentation",
+            "anti",
+            "state",
+            "federalist",
+            "sentiments",
+            "first",
+            "anarchist",
+            "currents",
+            "developed",
+            "throughout",
+            "th",
+            "century",
+            "william",
+            "godwin",
+            "espoused",
+            "philosophical",
+            "anarchism",
+            "england",
+            "morally",
+            "delegitimising",
+            "state",
+            "max",
+            "stirner",
+            "'s",
+            "thinking",
+            "paved",
+            "way",
+            "individualism",
+            "pierre",
+            "joseph",
+            "proudhon",
+            "'s"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "known",
+            "first",
+            "international",
+            "formed",
+            "unite",
+            "diverse",
+            "revolutionary",
+            "currents",
+            "international",
+            "became",
+            "significant",
+            "political",
+            "force",
+            "karl",
+            "marx",
+            "leading",
+            "figure",
+            "member",
+            "general",
+            "council",
+            "bakunin",
+            "'s",
+            "faction",
+            "jura",
+            "federation",
+            "proudhon",
+            "'s",
+            "followers",
+            "mutualists",
+            "opposed",
+            "state",
+            "socialism",
+            "advocating",
+            "political",
+            "abstentionism",
+            "small",
+            "property",
+            "holdings",
+            "bitter",
+            "disputes",
+            "bakuninists",
+            "expelled",
+            "international",
+            "marxists",
+            "hague",
+            "congress",
+            "anarchists",
+            "treated",
+            "similarly",
+            "second",
+            "international",
+            "ultimately",
+            "expelled",
+            "bakunin",
+            "famously",
+            "predicted",
+            "revolutionaries",
+            "gained",
+            "power",
+            "marx",
+            "'s",
+            "terms",
+            "would",
+            "end"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "new",
+            "tyrants",
+            "workers",
+            "response",
+            "expulsion",
+            "first",
+            "international",
+            "anarchists",
+            "formed",
+            "st",
+            "imier",
+            "international",
+            "influence",
+            "peter",
+            "kropotkin",
+            "russian",
+            "philosopher",
+            "scientist",
+            "anarcho",
+            "communism",
+            "overlapped",
+            "collectivism",
+            "anarcho",
+            "communists",
+            "drew",
+            "inspiration",
+            "paris",
+            "commune",
+            "advocated",
+            "free",
+            "federation",
+            "distribution",
+            "goods",
+            "according",
+            "one",
+            "'s",
+            "needs",
+            "turn",
+            "century",
+            "anarchism",
+            "spread",
+            "world",
+            "notable",
+            "feature",
+            "international",
+            "syndicalism",
+            "movement",
+            "china",
+            "small",
+            "groups",
+            "students",
+            "imported",
+            "humanistic",
+            "pro",
+            "science",
+            "version",
+            "anarcho",
+            "communism",
+            "tokyo",
+            "hotspot"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "rebellious",
+            "youth",
+            "countries",
+            "far",
+            "east",
+            "travelling",
+            "japanese",
+            "capital",
+            "study",
+            "latin",
+            "america",
+            "argentina",
+            "stronghold",
+            "anarcho",
+            "syndicalism",
+            "became",
+            "prominent",
+            "left",
+            "wing",
+            "ideology",
+            "time",
+            "minority",
+            "anarchists",
+            "adopted",
+            "tactics",
+            "revolutionary",
+            "political",
+            "violence",
+            "strategy",
+            "became",
+            "known",
+            "propaganda",
+            "deed",
+            "dismemberment",
+            "french",
+            "socialist",
+            "movement",
+            "many",
+            "groups",
+            "execution",
+            "exile",
+            "many",
+            "communards",
+            "penal",
+            "colonies",
+            "following",
+            "suppression",
+            "paris",
+            "commune",
+            "favoured",
+            "individualist",
+            "political",
+            "expression",
+            "acts",
+            "even",
+            "though",
+            "many",
+            "anarchists",
+            "distanced",
+            "terrorist",
+            "acts",
+            "infamy",
+            "came"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "upon",
+            "movement",
+            "attempts",
+            "made",
+            "exclude",
+            "american",
+            "immigration",
+            "including",
+            "immigration",
+            "act",
+            "also",
+            "called",
+            "anarchist",
+            "exclusion",
+            "act",
+            "illegalism",
+            "another",
+            "strategy",
+            "anarchists",
+            "adopted",
+            "period",
+            "nestor",
+            "makhno",
+            "seen",
+            "members",
+            "anarchist",
+            "revolutionary",
+            "insurrectionary",
+            "army",
+            "ukraine",
+            "despite",
+            "concerns",
+            "anarchists",
+            "enthusiastically",
+            "participated",
+            "russian",
+            "revolution",
+            "opposition",
+            "white",
+            "movement",
+            "however",
+            "met",
+            "harsh",
+            "suppression",
+            "bolshevik",
+            "government",
+            "stabilised",
+            "several",
+            "anarchists",
+            "petrograd",
+            "moscow",
+            "fled",
+            "ukraine",
+            "notably",
+            "leading",
+            "kronstadt",
+            "rebellion",
+            "nestor",
+            "makhno",
+            "'s",
+            "struggle",
+            "free",
+            "territory"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "anarchists",
+            "crushed",
+            "russia",
+            "two",
+            "new",
+            "antithetical",
+            "currents",
+            "emerged",
+            "namely",
+            "platformism",
+            "synthesis",
+            "anarchism",
+            "former",
+            "sought",
+            "create",
+            "coherent",
+            "group",
+            "would",
+            "push",
+            "revolution",
+            "latter",
+            "anything",
+            "would",
+            "resemble",
+            "political",
+            "party",
+            "seeing",
+            "victories",
+            "bolsheviks",
+            "october",
+            "revolution",
+            "resulting",
+            "russian",
+            "civil",
+            "war",
+            "many",
+            "workers",
+            "activists",
+            "turned",
+            "communist",
+            "parties",
+            "grew",
+            "expense",
+            "anarchism",
+            "socialist",
+            "movements",
+            "france",
+            "united",
+            "states",
+            "members",
+            "major",
+            "syndicalist",
+            "movements",
+            "general",
+            "confederation",
+            "labour",
+            "industrial",
+            "workers",
+            "world"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "left",
+            "organisations",
+            "joined",
+            "communist",
+            "international",
+            "spanish",
+            "civil",
+            "war",
+            "anarchists",
+            "syndicalists",
+            "cnt",
+            "fai",
+            "allied",
+            "various",
+            "currents",
+            "leftists",
+            "long",
+            "tradition",
+            "spanish",
+            "anarchism",
+            "led",
+            "anarchists",
+            "playing",
+            "pivotal",
+            "role",
+            "war",
+            "response",
+            "army",
+            "rebellion",
+            "anarchist",
+            "inspired",
+            "movement",
+            "peasants",
+            "workers",
+            "supported",
+            "armed",
+            "militias",
+            "took",
+            "control",
+            "barcelona",
+            "large",
+            "areas",
+            "rural",
+            "spain",
+            "collectivised",
+            "land",
+            "soviet",
+            "union",
+            "provided",
+            "limited",
+            "assistance",
+            "beginning",
+            "war",
+            "result",
+            "bitter",
+            "fight",
+            "among"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "communists",
+            "anarchists",
+            "series",
+            "events",
+            "named",
+            "may",
+            "days",
+            "joseph",
+            "stalin",
+            "tried",
+            "seize",
+            "control",
+            "republicans",
+            "post",
+            "war",
+            "era",
+            "rojava",
+            "'s",
+            "support",
+            "efforts",
+            "workers",
+            "form",
+            "cooperatives",
+            "exemplified",
+            "sewing",
+            "cooperative",
+            "end",
+            "world",
+            "war",
+            "ii",
+            "anarchist",
+            "movement",
+            "severely",
+            "weakened",
+            "witnessed",
+            "revival",
+            "anarchism",
+            "likely",
+            "caused",
+            "perceived",
+            "failure",
+            "marxism",
+            "leninism",
+            "tensions",
+            "built",
+            "cold",
+            "war",
+            "time",
+            "anarchism",
+            "found",
+            "presence",
+            "movements",
+            "critical",
+            "towards",
+            "capitalism",
+            "state",
+            "anti",
+            "nuclear",
+            "environmental",
+            "peace",
+            "movements"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "counterculture",
+            "new",
+            "left",
+            "also",
+            "saw",
+            "transition",
+            "previous",
+            "revolutionary",
+            "nature",
+            "provocative",
+            "anti",
+            "capitalist",
+            "reformism",
+            "anarchism",
+            "became",
+            "associated",
+            "punk",
+            "subculture",
+            "exemplified",
+            "bands",
+            "crass",
+            "sex",
+            "pistols",
+            "established",
+            "feminist",
+            "tendencies",
+            "anarcha",
+            "feminism",
+            "returned",
+            "vigour",
+            "second",
+            "wave",
+            "feminism",
+            "black",
+            "anarchism",
+            "began",
+            "take",
+            "form",
+            "time",
+            "influenced",
+            "anarchism",
+            "'s",
+            "move",
+            "eurocentric",
+            "demographic",
+            "coincided",
+            "failure",
+            "gain",
+            "traction",
+            "northern",
+            "europe",
+            "unprecedented",
+            "height",
+            "latin",
+            "america",
+            "around",
+            "turn",
+            "st",
+            "century",
+            "anarchism",
+            "grew",
+            "popularity"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        },
+        {
+          "token": [
+            "influence",
+            "within",
+            "anti",
+            "capitalist",
+            "anti",
+            "war",
+            "anti",
+            "globalisation",
+            "movements",
+            "anarchists",
+            "became",
+            "known",
+            "involvement",
+            "protests",
+            "world",
+            "trade",
+            "organization",
+            "wto",
+            "group",
+            "eight",
+            "world",
+            "economic",
+            "forum",
+            "protests",
+            "''ad",
+            "hoc''",
+            "leaderless",
+            "anonymous",
+            "cadres",
+            "known",
+            "black",
+            "blocs",
+            "engaged",
+            "rioting",
+            "property",
+            "destruction",
+            "violent",
+            "confrontations",
+            "police",
+            "organisational",
+            "tactics",
+            "pioneered",
+            "time",
+            "include",
+            "affinity",
+            "groups",
+            "security",
+            "culture",
+            "use",
+            "decentralised",
+            "technologies",
+            "internet",
+            "significant",
+            "event",
+            "period",
+            "confrontations",
+            "seattle",
+            "wto",
+            "conference",
+            "anarchist",
+            "ideas",
+            "influential",
+            "development"
+          ],
+          "label": [
+            "Humanities",
+            "Philosophy",
+            "Social philosophy",
+            "Anarchism"
+          ]
+        }
+      ]
+    }
+  ]
+}

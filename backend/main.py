@@ -5,6 +5,9 @@ With Schema Mapping, Filtering, and Performance Comparison
 
 import os
 import sys
+import csv
+import json
+from io import StringIO
 from pathlib import Path
 
 # Add backend directory to path for imports
@@ -44,6 +47,7 @@ class DataGenerationRequest(BaseModel):
     use_kaggle: bool = Field(default=False, description="Use Kaggle dataset context")
     use_rag: bool = Field(default=False, description="Use RAG enhancement")
     enhanced_mode: bool = Field(default=True, description="Use enhanced mode with schema mapping")
+    output_format: str = Field(default="auto", description="Output format: auto|json|csv|jsonl|markdown")
 
 class CompareRequest(BaseModel):
     query: str = Field(..., description="Natural language query for comparison")
@@ -65,8 +69,9 @@ class AnalyzeQueryRequest(BaseModel):
     query: str = Field(..., description="Query to analyze")
 
 # Initialize services after app is defined
+# LLM Router: tries Groq first, falls back to Gemini automatically
 try:
-    from backend.gemini_service import gemini_service
+    from backend.llm_router import llm_service as gemini_service  # aliased for backward compat
     from backend.mock_services import mock_kaggle_service, mock_rag_service
     from backend.schema_mapper import schema_mapper
     from backend.data_filter import data_filter
@@ -75,6 +80,54 @@ try:
 except Exception as e:
     services_loaded = False
     service_error = str(e)
+
+
+def _detect_output_format(query: str, requested_format: str) -> str:
+    if requested_format and requested_format.lower() in {"json", "csv", "jsonl", "markdown"}:
+        return requested_format.lower()
+
+    q = query.lower()
+    if "jsonl" in q or "ndjson" in q:
+        return "jsonl"
+    if "csv" in q:
+        return "csv"
+    if "markdown table" in q or "table format" in q or "as table" in q:
+        return "markdown"
+    if "json" in q:
+        return "json"
+    return "json"
+
+
+def _format_output(data: List[Dict[str, Any]], output_format: str) -> str:
+    if not data:
+        return "[]" if output_format in {"json", "jsonl"} else ""
+
+    if output_format == "json":
+        return json.dumps(data, indent=2)
+
+    if output_format == "jsonl":
+        return "\n".join(json.dumps(row) for row in data)
+
+    if output_format == "csv":
+        headers = list(data[0].keys())
+        stream = StringIO()
+        writer = csv.DictWriter(stream, fieldnames=headers)
+        writer.writeheader()
+        writer.writerows(data)
+        return stream.getvalue()
+
+    if output_format == "markdown":
+        headers = list(data[0].keys())
+        lines = [
+            "| " + " | ".join(headers) + " |",
+            "| " + " | ".join(["---"] * len(headers)) + " |",
+        ]
+        for row in data:
+            values = [str(row.get(h, "")).replace("|", "\\|") for h in headers]
+            lines.append("| " + " | ".join(values) + " |")
+        return "\n".join(lines)
+
+    return json.dumps(data, indent=2)
 
 # Mount static files
 frontend_path = Path(__file__).parent.parent / "frontend"
@@ -133,25 +186,58 @@ async def generate_data(request: DataGenerationRequest):
             rag_result = await mock_rag_service.get_context(request.query)
             rag_context = rag_result
         
-        # Generate data
-        result = await gemini_service.generate_data(
+        # Step 1: Build validated schema from prompt
+        schema_result = await gemini_service.generate_schema_with_validation(
             request.query,
-            enhanced=request.enhanced_mode,
             rag_context=rag_context,
             kaggle_context=kaggle_context
+        )
+
+        if not schema_result.get("success"):
+            raise HTTPException(status_code=500, detail=schema_result.get("error", "Schema generation failed"))
+
+        # Reuse schema columns from step 1 to avoid a redundant LLM field-extraction call
+        # This reduces API usage from 3 calls → 2 calls per request
+        extracted_fields = [col["name"] for col in schema_result["schema"]["columns"]]
+        schema_context = {
+            "context": [
+                f"Validated dataset: {schema_result['metadata']['dataset_name']}",
+                f"Rows requested: {schema_result['metadata']['rows']}",
+                f"Columns: {', '.join(extracted_fields)}",
+            ]
+        }
+        merged_rag_context = rag_context or {"context": []}
+        if isinstance(merged_rag_context, dict):
+            merged_rag_context.setdefault("context", [])
+            merged_rag_context["context"].extend(schema_context["context"])
+
+        # Step 2: Generate data — skip LLM field extraction (use_llm_extraction=False)
+        # because we already have the fields from step 1
+        result = await gemini_service.generate_data_enhanced(
+            request.query,
+            rag_context=merged_rag_context,
+            kaggle_context=kaggle_context,
+            use_llm_extraction=False  # ← skips 1 extra API call
         )
         
         if not result.get("success"):
             raise HTTPException(status_code=500, detail=result.get("error", "Data generation failed"))
         
+        output_format = _detect_output_format(request.query, request.output_format)
+        formatted_output = _format_output(result["data"], output_format)
+
         response = {
             "success": True,
             "mode": result.get("mode", "enhanced"),
             "data": result["data"],
+            "output_format": output_format,
+            "formatted_output": formatted_output,
             "metadata": {
                 "record_count": result["record_count"],
                 "schema": result["schema"],
-                "query": result["query"]
+                "query": result["query"],
+                "mapped_schema": schema_result["schema"],
+                "schema_flow": schema_result.get("flow", "llm_extraction → schema_validation")
             },
             "metrics": result.get("metrics"),
             "validation": result.get("validation"),
@@ -162,6 +248,7 @@ async def generate_data(request: DataGenerationRequest):
             response["kaggle_context"] = kaggle_context
         if rag_context:
             response["rag_context"] = rag_context
+        response["schema_mapping"] = schema_result
         
         return response
         
@@ -362,28 +449,8 @@ async def generate_schema(request: DataGenerationRequest):
 @app.on_event("startup")
 async def startup_event():
     """Display startup message"""
-    print("\n" + "="*62)
-    print("║" + " "*60 + "║")
-    print("║        Data Generation AI Platform v2.0                   ║")
-    print("║        Powered by Google Gemini API                       ║")
-    print("║        With Schema Mapping & Performance Comparison       ║")
-    print("║" + " "*60 + "║")
-    print("="*62)
     print()
-    print("🚀 Server starting on http://0.0.0.0:8000")
-    print("📚 API Documentation: http://0.0.0.0:8000/docs")
-    print("🏥 Health Check: http://0.0.0.0:8000/health")
-    print("📊 Performance Stats: http://0.0.0.0:8000/api/statistics")
-    print()
-    print("⚠️  Make sure you have set GEMINI_API_KEY in your .env file")
-    print("    Get your free API key: https://makersuite.google.com/app/apikey")
-    print()
-    print("🆕 New Features in v2.0:")
-    print("    - Schema Relationship Mapping")
-    print("    - Data Filtering & Validation")
-    print("    - Normal vs Enhanced Mode Comparison")
-    print("    - Performance Metrics Tracking")
-    print()
+    print(" Server starting on http://0.0.0.0:8000")
 
 # Main entry point
 if __name__ == "__main__":

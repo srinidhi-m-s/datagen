@@ -67,7 +67,7 @@ async def test_schema_generation(query=None):
         # STEP 1: SHOW LLM OUTPUT
         # ========================================================================
         print("\n" + "=" * 100)
-        print("🤖 STEP 1: LLM OUTPUT (Raw JSON from Gemini)")
+        print(" STEP 1: LLM OUTPUT (Raw JSON from Gemini)")
         print("=" * 100)
         print("\nThe LLM analyzes the query and generates this schema:")
         print()

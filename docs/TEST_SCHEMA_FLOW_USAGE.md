@@ -105,21 +105,21 @@ python backend/test_schema_flow.py "Create 60 student records with enrollment in
 
 For any query you provide, the script will show:
 
-1. **🤖 STEP 1: LLM OUTPUT**
+1. **STEP 1: LLM OUTPUT**
    - Raw JSON from Gemini
    - Dataset name, rows, columns
 
-2. **🔍 STEP 2: SCHEMA MAPPER OUTPUT**
+2. **STEP 2: SCHEMA MAPPER OUTPUT**
    - Validated and normalized schema
    - Type-safe Pydantic output
 
-3. **🔄 TRANSFORMATION COMPARISON**
+3. **TRANSFORMATION COMPARISON**
    - Table showing LLM type → Normalized type
 
-4. **🎯 KEY TRANSFORMATIONS**
+4. **KEY TRANSFORMATIONS**
    - Detailed view of first 4 columns
 
-5. **✅ VALIDATION COMPLETE**
+5. **VALIDATION COMPLETE**
    - Final metadata and summary
 
 ---

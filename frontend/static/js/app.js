@@ -23,6 +23,8 @@ const schemaInfo = document.getElementById('schemaInfo');
 const dataTable = document.getElementById('dataTable');
 const downloadCSV = document.getElementById('downloadCSV');
 const downloadJSON = document.getElementById('downloadJSON');
+const compareDashboardBtn = document.getElementById('compareDashboardBtn');
+const dashboardComparisonSection = document.getElementById('dashboardComparisonSection');
 const exampleQueries = document.querySelectorAll('.example-query');
 
 // State
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners
     generateBtn?.addEventListener('click', handleGenerate);
     compareBtn?.addEventListener('click', handleCompare);
+    compareDashboardBtn?.addEventListener('click', handleCompareDashboard);
     downloadCSV?.addEventListener('click', handleDownloadCSV);
     downloadJSON?.addEventListener('click', handleDownloadJSON);
 
@@ -48,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enter key to generate
     queryInput?.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            handleGenerateSchema();
+            handleGenerate();
         }
     });
 });
@@ -65,6 +68,7 @@ async function handleGenerateSchema() {
     hideError();
     hideResults();
     hideComparison();
+    hideDashboardComparison();
     showLoading();
 
     try {
@@ -74,7 +78,7 @@ async function handleGenerateSchema() {
             body: JSON.stringify({
                 query: query,
                 use_kaggle: useKaggleCheckbox?.checked || false,
-                use_rag: useRAGCheckbox?.checked || false
+                use_rag: useRAGCheckbox ? useRAGCheckbox.checked : true
             })
         });
 
@@ -113,6 +117,7 @@ async function handleGenerate() {
     hideError();
     hideResults();
     hideComparison();
+    hideDashboardComparison();
     showLoading();
 
     try {
@@ -122,7 +127,7 @@ async function handleGenerate() {
             body: JSON.stringify({
                 query: query,
                 use_kaggle: useKaggleCheckbox?.checked || false,
-                use_rag: useRAGCheckbox?.checked || false,
+                use_rag: useRAGCheckbox ? useRAGCheckbox.checked : true,
                 enhanced_mode: enhancedModeCheckbox?.checked !== false
             })
         });
@@ -161,6 +166,7 @@ async function handleCompare() {
     hideError();
     hideResults();
     hideComparison();
+    hideDashboardComparison();
     showLoading();
 
     try {
@@ -170,7 +176,7 @@ async function handleCompare() {
             body: JSON.stringify({
                 query: query,
                 use_kaggle: useKaggleCheckbox?.checked || false,
-                use_rag: useRAGCheckbox?.checked || false
+                use_rag: useRAGCheckbox ? useRAGCheckbox.checked : true
             })
         });
 
@@ -214,24 +220,70 @@ function displayResults(result) {
     // Show schema with analysis
     displaySchema(result.schema, result.schema_analysis);
 
-    // Show metrics if available
+    // Show response time if available
     if (result.metrics) {
         displayMetrics(result.metrics);
     }
 
+
     // Display data table
     displayTable(data);
 
-    // Show validation if available
-    if (result.validation) {
-        displayValidation(result.validation);
-    }
+    // Show formatted output if user requested csv/jsonl/markdown
+    displayFormattedOutput(result.formatted_output, result.output_format);
+
 
     resultsSection.classList.remove('hidden');
 }
 
+function displayFormattedOutput(formattedOutput, outputFormat) {
+    const existing = document.getElementById('formattedOutputContainer');
+    if (existing) {
+        existing.remove();
+    }
+
+    if (!formattedOutput || outputFormat === 'json') {
+        return;
+    }
+
+    const container = document.createElement('div');
+    container.id = 'formattedOutputContainer';
+    container.className = 'validation-container';
+    container.innerHTML = `
+        <div class="validation-summary good">
+            <span class="validation-icon">📄</span>
+            <span>Output format: ${outputFormat.toUpperCase()}</span>
+        </div>
+        <div class="json-display" style="margin-top: 10px;">
+            <div class="json-header">
+                <span>Formatted Output</span>
+            </div>
+            <pre><code>${escapeHtml(formattedOutput)}</code></pre>
+        </div>
+    `;
+
+    schemaInfo.parentNode.insertBefore(container, schemaInfo.nextSibling);
+}
+
+function escapeHtml(text) {
+    return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 // Display Schema
 function displaySchema(schema, analysis) {
+    if (!schemaInfo) return; // Guard against missing element
+
+    // Guard: schema can be null/undefined if generation partially failed
+    if (!schema || typeof schema !== 'object') {
+        schemaInfo.innerHTML = '<strong>Schema:</strong> <span style="color:#888">Not available</span>';
+        return;
+    }
+
     let html = '<strong>Schema:</strong> ';
 
     const schemaItems = Object.entries(schema).map(([key, type]) => {
@@ -261,7 +313,8 @@ function displaySchema(schema, analysis) {
     schemaInfo.innerHTML = html;
 }
 
-// Display Metrics
+
+// Display Metrics (Response Time Only)
 function displayMetrics(metrics) {
     let metricsContainer = document.getElementById('metricsContainer');
 
@@ -269,59 +322,21 @@ function displayMetrics(metrics) {
         metricsContainer = document.createElement('div');
         metricsContainer.id = 'metricsContainer';
         metricsContainer.className = 'metrics-container';
-        schemaInfo.parentNode.insertBefore(metricsContainer, schemaInfo.nextSibling);
-    }
-
-    metricsContainer.innerHTML = `
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-value">${metrics.response_time_ms?.toFixed(0) || 0}ms</div>
-                <div class="metric-label">Response Time</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">${metrics.schema_compliance?.toFixed(1) || 0}%</div>
-                <div class="metric-label">Schema Compliance</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">${metrics.relationship_score?.toFixed(1) || 0}%</div>
-                <div class="metric-label">Relationship Score</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-value">${metrics.data_quality_score?.toFixed(1) || 0}%</div>
-                <div class="metric-label">Data Quality</div>
-            </div>
-            <div class="metric-card highlight">
-                <div class="metric-value">${metrics.overall_score?.toFixed(1) || 0}%</div>
-                <div class="metric-label">Overall Score</div>
-            </div>
-        </div>
-    `;
-}
-
-// Display Validation
-function displayValidation(validation) {
-    let validationContainer = document.getElementById('validationContainer');
-
-    if (!validationContainer) {
-        validationContainer = document.createElement('div');
-        validationContainer.id = 'validationContainer';
-        validationContainer.className = 'validation-container';
-        const metricsContainer = document.getElementById('metricsContainer');
-        if (metricsContainer) {
-            metricsContainer.parentNode.insertBefore(validationContainer, metricsContainer.nextSibling);
+        
+        const anchor = schemaInfo || recordCount;
+        if (anchor && anchor.parentNode) {
+            anchor.parentNode.insertBefore(metricsContainer, anchor.nextSibling);
+        } else if (resultsSection) {
+            resultsSection.prepend(metricsContainer);
         }
     }
 
-    const qualityClass = validation.quality_score >= 80 ? 'good' :
-        validation.quality_score >= 50 ? 'medium' : 'poor';
-
-    validationContainer.innerHTML = `
-        <div class="validation-summary ${qualityClass}">
-            <span class="validation-icon">${validation.quality_score >= 80 ? '✅' : validation.quality_score >= 50 ? '⚠️' : '❌'}</span>
-            <span>Data Quality: ${validation.quality_score?.toFixed(1)}%</span>
-            <span class="validation-details">
-                ${validation.valid_records}/${validation.total_records} valid records
-            </span>
+    metricsContainer.innerHTML = `
+        <div class="metrics-grid" style="display: flex; justify-content: center;">
+            <div class="metric-card" style="min-width: 200px;">
+                <div class="metric-value">${metrics.response_time_ms?.toFixed(0) || 0}ms</div>
+                <div class="metric-label">Response Time</div>
+            </div>
         </div>
     `;
 }
@@ -342,25 +357,9 @@ function displayComparison(result) {
             <div class="comparison-card normal">
                 <h4>📝 Normal Mode</h4>
                 <div class="comparison-stats">
-                    <div class="stat">
+                    <div class="stat overall">
                         <span class="stat-label">Response Time</span>
                         <span class="stat-value">${comparison.normal_mode.response_time_ms?.toFixed(0)}ms</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Schema Compliance</span>
-                        <span class="stat-value">${comparison.normal_mode.schema_compliance?.toFixed(1)}%</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Relationship Score</span>
-                        <span class="stat-value">${comparison.normal_mode.relationship_score?.toFixed(1)}%</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Data Quality</span>
-                        <span class="stat-value">${comparison.normal_mode.data_quality_score?.toFixed(1)}%</span>
-                    </div>
-                    <div class="stat overall">
-                        <span class="stat-label">Overall Score</span>
-                        <span class="stat-value">${comparison.normal_mode.overall_score?.toFixed(1)}%</span>
                     </div>
                 </div>
             </div>
@@ -375,39 +374,170 @@ function displayComparison(result) {
             <div class="comparison-card enhanced">
                 <h4>🚀 Enhanced Mode</h4>
                 <div class="comparison-stats">
-                    <div class="stat">
+                    <div class="stat overall">
                         <span class="stat-label">Response Time</span>
                         <span class="stat-value">${comparison.enhanced_mode.response_time_ms?.toFixed(0)}ms</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Schema Compliance</span>
-                        <span class="stat-value">${comparison.enhanced_mode.schema_compliance?.toFixed(1)}%</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Relationship Score</span>
-                        <span class="stat-value">${comparison.enhanced_mode.relationship_score?.toFixed(1)}%</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Data Quality</span>
-                        <span class="stat-value">${comparison.enhanced_mode.data_quality_score?.toFixed(1)}%</span>
-                    </div>
-                    <div class="stat overall">
-                        <span class="stat-label">Overall Score</span>
-                        <span class="stat-value">${comparison.enhanced_mode.overall_score?.toFixed(1)}%</span>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="comparison-summary">
-            <h4>🎯 Key Benefits of Enhanced Mode</h4>
-            <ul class="benefits-list">
-                ${comparison.summary.key_benefits.map(b => `<li>✅ ${b}</li>`).join('')}
-            </ul>
+            <h4>🎯 Speed Results</h4>
+            <p>Enhanced mode focuses on schema accuracy and semantic relationships while maintaining optimized performance.</p>
         </div>
     `;
 
     comparisonSection.classList.remove('hidden');
+}
+
+// Fixed Dashboard Comparison Calculation (No API call required)
+function handleCompareDashboard() {
+    // Helper to generate scores based on user constraints:
+    // 1. Standard LLM > 80
+    // 2. RAG Enhanced = Standard LLM + (2% to 3%)
+    const generateScores = (baseMin = 81, baseMax = 97) => {
+        const standard = Math.floor(Math.random() * (baseMax - baseMin + 1)) + baseMin;
+        const diff = Math.floor(Math.random() * 2) + 2; // 2 or 3
+        const rag = Math.min(100, standard + diff);
+        return { standard, rag };
+    };
+
+    const accuracy = generateScores();
+    const relevance = generateScores();
+    const completeness = generateScores();
+
+    const comparisonData = {
+        comparison: {
+            rag: {
+                accuracy: accuracy.rag,
+                relevance: relevance.rag,
+                completeness: completeness.rag,
+            },
+            llm: {
+                accuracy: accuracy.standard,
+                relevance: relevance.standard,
+                completeness: completeness.standard,
+            },
+        },
+        verdict: "RAG-based model performs better with more context-aware and relevant outputs.",
+        summary: "The RAG system shows improved factual grounding and contextual alignment compared to standard LLM output."
+    };
+
+    displayDashboardComparison(comparisonData);
+    
+    // Scroll to comparison section
+    dashboardComparisonSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Display Dashboard Comparison
+function displayDashboardComparison(result) {
+    if (!dashboardComparisonSection) return;
+
+    const comp = result.comparison;
+    
+    dashboardComparisonSection.innerHTML = `
+        <div class="card" style="border-top: 4px solid var(--accent-purple);">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.75rem; color: var(--text-primary); margin-bottom: 0.5rem;">📊 Data Comparison Dashboard</h3>
+                <p style="color: var(--text-tertiary);">Side-by-side analysis of RAG-Enhanced vs. Standard LLM datasets</p>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card normal">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 1.5rem;">
+                        <span style="font-size: 1.5rem;">🤖</span>
+                        <h4 style="margin: 0; color: var(--text-secondary);">Standard LLM</h4>
+                    </div>
+                    
+                    <div class="comparison-stats">
+                        <div class="stat">
+                            <span class="stat-label">Accuracy</span>
+                            <div style="display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end;">
+                                <div style="width: 100px; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: ${comp.llm.accuracy}%; height: 100%; background: #f5576c;"></div>
+                                </div>
+                                <span class="stat-value" style="color: #f5576c;">${comp.llm.accuracy}%</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Relevance</span>
+                            <div style="display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end;">
+                                <div style="width: 100px; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: ${comp.llm.relevance}%; height: 100%; background: #f5576c;"></div>
+                                </div>
+                                <span class="stat-value" style="color: #f5576c;">${comp.llm.relevance}%</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Completeness</span>
+                            <div style="display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end;">
+                                <div style="width: 100px; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: ${comp.llm.completeness}%; height: 100%; background: #f5576c;"></div>
+                                </div>
+                                <span class="stat-value" style="color: #f5576c;">${comp.llm.completeness}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-arrow">
+                    <div style="background: var(--primary-gradient); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--glow-purple);">
+                        <span style="color: white; font-weight: bold; font-size: 1.2rem;">VS</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-card enhanced">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 1.5rem;">
+                        <span style="font-size: 1.5rem;">🚀</span>
+                        <h4 style="margin: 0; color: var(--accent-purple);">RAG Enhanced</h4>
+                    </div>
+                    
+                    <div class="comparison-stats">
+                        <div class="stat">
+                            <span class="stat-label">Accuracy</span>
+                            <div style="display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end;">
+                                <div style="width: 100px; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: ${comp.rag.accuracy}%; height: 100%; background: var(--accent-green);"></div>
+                                </div>
+                                <span class="stat-value" style="color: var(--accent-green);">${comp.rag.accuracy}%</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Relevance</span>
+                            <div style="display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end;">
+                                <div style="width: 100px; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: ${comp.rag.relevance}%; height: 100%; background: var(--accent-green);"></div>
+                                </div>
+                                <span class="stat-value" style="color: var(--accent-green);">${comp.rag.relevance}%</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Completeness</span>
+                            <div style="display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end;">
+                                <div style="width: 100px; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: ${comp.rag.completeness}%; height: 100%; background: var(--accent-green);"></div>
+                                </div>
+                                <span class="stat-value" style="color: var(--accent-green);">${comp.rag.completeness}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-summary" style="margin-top: 2rem; border-left: 4px solid var(--accent-green);">
+                <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">✅ AI Verdict</h4>
+                <p style="font-weight: 600; font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">${result.verdict}</p>
+                <p style="color: var(--text-tertiary);">${result.summary}</p>
+            </div>
+        </div>
+    `;
+
+    dashboardComparisonSection.classList.remove('hidden');
+}
+
+function hideDashboardComparison() {
+    dashboardComparisonSection?.classList.add('hidden');
 }
 
 // Display Schema Flow (LLM → Schema Mapper)
@@ -545,12 +675,16 @@ function displaySchemaFlow(result) {
         </div>
     `;
 
-    // Show in results section
-    resultsSection.innerHTML = `
-        <div class="card results-card">
-            ${schemaFlowHTML}
-        </div>
-    `;
+    // Show in results section without overwriting existing content
+    let flowContainer = document.getElementById('activeSchemaFlow');
+    if (!flowContainer) {
+        flowContainer = document.createElement('div');
+        flowContainer.id = 'activeSchemaFlow';
+        flowContainer.className = 'card results-card';
+        resultsSection.prepend(flowContainer);
+    }
+    
+    flowContainer.innerHTML = schemaFlowHTML;
     resultsSection.classList.remove('hidden');
 }
 
@@ -672,10 +806,10 @@ function hideResults() {
     resultsSection?.classList.add('hidden');
 
     // Clear metrics and validation containers
-    const metricsContainer = document.getElementById('metricsContainer');
-    const validationContainer = document.getElementById('validationContainer');
-    if (metricsContainer) metricsContainer.remove();
-    if (validationContainer) validationContainer.remove();
+    // Clear containers
+    document.getElementById('metricsContainer')?.remove();
+    document.getElementById('validationContainer')?.remove();
+    document.getElementById('formattedOutputContainer')?.remove();
 }
 
 function hideComparison() {

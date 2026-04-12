@@ -1,0 +1,5 @@
+datasets>=2.14.0
+sentence-transformers
+scikit-learn
+numpy
+huggingface_hub

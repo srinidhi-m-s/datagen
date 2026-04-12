@@ -117,6 +117,11 @@
                 <!-- Populated by JavaScript -->
             </section>
 
+            <!-- Dashboard Comparison Section (Fixed) -->
+            <section id="dashboardComparisonSection" class="comparison-section hidden">
+                <!-- Populated by JavaScript -->
+            </section>
+
             <!-- Results Section -->
             <section id="resultsSection" class="results-section hidden">
                 <div class="card results-card">
@@ -126,6 +131,12 @@
                             <p id="recordCount">0 records generated</p>
                         </div>
                         <div class="results-actions">
+                            <button id="compareDashboardBtn" class="btn btn-primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Compare
+                            </button>
                             <button id="downloadCSV" class="btn btn-secondary">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -144,9 +155,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Schema Display -->
-                    <div id="schemaInfo" class="schema-display"></div>
 
                     <!-- Data Table -->
                     <div class="table-wrapper">
@@ -188,43 +196,11 @@
                 </div>
             </section>
 
-            <!-- Features Section -->
-            <section class="features-section">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🔗</div>
-                        <h4>Schema Relationship Mapping</h4>
-                        <p>Automatically detects and maintains semantic relationships between data fields</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
-                        <h4>Data Filtering & Validation</h4>
-                        <p>Filter generated data and validate against constraints</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h4>Performance Comparison</h4>
-                        <p>Compare Normal LLM vs Enhanced mode with detailed metrics</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✅</div>
-                        <h4>Quality Metrics</h4>
-                        <p>Track schema compliance, relationship scores, and data quality</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 DataGen AI </p>
-            <div class="footer-links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="https://makersuite.google.com/app/apikey" target="_blank">Get API Key</a>
-            </div>
         </div>
     </footer>
 
