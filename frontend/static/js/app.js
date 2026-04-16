@@ -30,6 +30,7 @@ const exampleQueries = document.querySelectorAll('.example-query');
 // State
 let currentData = null;
 let comparisonData = null;
+let notifyWhenReady = false;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -146,6 +147,12 @@ async function handleGenerate() {
         currentData = result;
         displayResults(result);
 
+        // Show notification popup if user opted in
+        if (notifyWhenReady) {
+            showNotifyPopup();
+            notifyWhenReady = false;
+        }
+
     } catch (error) {
         console.error('Generation error:', error);
         showError(error.message || 'An unexpected error occurred. Please check your API key and try again.');
@@ -194,6 +201,12 @@ async function handleCompare() {
         if (result.enhanced_result?.success) {
             currentData = result.enhanced_result;
             displayResults(result.enhanced_result);
+        }
+
+        // Show notification popup if user opted in
+        if (notifyWhenReady) {
+            showNotifyPopup();
+            notifyWhenReady = false;
         }
 
     } catch (error) {
@@ -785,10 +798,71 @@ function downloadFile(content, filename, type) {
 // UI Helpers
 function showLoading() {
     loadingSection?.classList.remove('hidden');
+    // Reset notify button state each time loading starts
+    const notifyBtn = document.getElementById('notifyBtn');
+    if (notifyBtn) {
+        notifyBtn.disabled = false;
+        notifyBtn.classList.remove('btn-notify-active');
+        notifyBtn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Notify Me When Ready</span>
+        `;
+    }
+    notifyWhenReady = false;
 }
 
 function hideLoading() {
     loadingSection?.classList.add('hidden');
+}
+
+// Notification helpers
+function enableNotification() {
+    notifyWhenReady = true;
+    alert('We will notify you when the output is ready!');
+    const notifyBtn = document.getElementById('notifyBtn');
+    if (notifyBtn) {
+        notifyBtn.disabled = true;
+        notifyBtn.classList.add('btn-notify-active');
+        notifyBtn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>🔔 Notification Enabled</span>
+        `;
+    }
+}
+
+function showNotifyPopup() {
+    const popup = document.getElementById('notifyPopup');
+    if (popup) {
+        popup.classList.remove('hidden');
+        // Also play a subtle sound if available
+        try {
+            const audio = new AudioContext();
+            const oscillator = audio.createOscillator();
+            const gain = audio.createGain();
+            oscillator.connect(gain);
+            gain.connect(audio.destination);
+            oscillator.frequency.value = 880;
+            oscillator.type = 'sine';
+            gain.gain.value = 0.1;
+            oscillator.start();
+            oscillator.stop(audio.currentTime + 0.15);
+        } catch (e) { /* audio not supported */ }
+    }
+}
+
+function dismissNotifyPopup() {
+    const popup = document.getElementById('notifyPopup');
+    if (popup) {
+        popup.classList.add('hidden');
+    }
+    // Scroll to results
+    resultsSection?.scrollIntoView({ behavior: 'smooth' });
 }
 
 function showError(message) {

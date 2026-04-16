@@ -1370,3 +1370,151 @@ body {
     color: var(--text-secondary);
     font-size: 1rem;
 }
+
+/* === Notify Me Button === */
+.btn-notify {
+    background: transparent;
+    color: var(--accent-purple);
+    border: 2px solid var(--accent-purple);
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    animation: fadeInUp 0.5s ease-out 0.3s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-notify::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: -1;
+}
+
+.btn-notify:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: var(--glow-purple);
+}
+
+.btn-notify:hover::before {
+    opacity: 1;
+}
+
+.btn-notify svg {
+    animation: bellRing 2s ease-in-out infinite;
+}
+
+@keyframes bellRing {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-14deg); }
+    30% { transform: rotate(10deg); }
+    40% { transform: rotate(-6deg); }
+    50% { transform: rotate(0deg); }
+}
+
+.btn-notify-active {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border-color: transparent !important;
+    cursor: default;
+    opacity: 0.85;
+}
+
+.btn-notify-active svg {
+    animation: none;
+}
+
+/* === Notification Popup === */
+.notify-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: popupFadeIn 0.35s ease-out;
+}
+
+.notify-popup.hidden {
+    display: none !important;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.notify-popup-content {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color-hover);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl) var(--spacing-xl);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: var(--shadow-xl), var(--glow-purple);
+    animation: popupSlideUp 0.4s ease-out;
+}
+
+@keyframes popupSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.notify-popup-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+    animation: popupBounce 0.6s ease-out 0.2s both;
+}
+
+@keyframes popupBounce {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.notify-popup-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.notify-popup-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.notify-popup-content .btn-primary {
+    padding: 0.75rem 2.5rem;
+    font-size: 1rem;
+}
