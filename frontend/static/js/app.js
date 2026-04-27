@@ -31,6 +31,7 @@ const exampleQueries = document.querySelectorAll('.example-query');
 let currentData = null;
 let comparisonData = null;
 let notifyWhenReady = false;
+let notifyEmail = '';
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Example query clicks
     exampleQueries.forEach(query => {
         query.addEventListener('click', () => {
-            queryInput.value = query.textContent;
+            const p = query.querySelector('p');
+            queryInput.value = p ? p.textContent.trim() : query.textContent.trim();
             queryInput.focus();
         });
     });
@@ -150,7 +152,11 @@ async function handleGenerate() {
         // Show notification popup if user opted in
         if (notifyWhenReady) {
             showNotifyPopup();
+            if (notifyEmail) {
+                sendEmailNotification(notifyEmail, queryInput.value.trim(), result.data?.length || 0);
+            }
             notifyWhenReady = false;
+            notifyEmail = '';
         }
 
     } catch (error) {
@@ -206,7 +212,12 @@ async function handleCompare() {
         // Show notification popup if user opted in
         if (notifyWhenReady) {
             showNotifyPopup();
+            if (notifyEmail) {
+                const emailData = result.enhanced_result || result;
+                sendEmailNotification(notifyEmail, queryInput.value.trim(), emailData.data?.length || 0);
+            }
             notifyWhenReady = false;
+            notifyEmail = '';
         }
 
     } catch (error) {
@@ -798,20 +809,17 @@ function downloadFile(content, filename, type) {
 // UI Helpers
 function showLoading() {
     loadingSection?.classList.remove('hidden');
-    // Reset notify button state each time loading starts
-    const notifyBtn = document.getElementById('notifyBtn');
-    if (notifyBtn) {
-        notifyBtn.disabled = false;
-        notifyBtn.classList.remove('btn-notify-active');
-        notifyBtn.innerHTML = `
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Notify Me When Ready</span>
-        `;
-    }
+    // Reset notify state each time loading starts
     notifyWhenReady = false;
+    notifyEmail = '';
+    const notifyBtn = document.getElementById('notifyBtn');
+    const emailRow = document.getElementById('notifyEmailRow');
+    const confirmed = document.getElementById('notifyEmailConfirmed');
+    const emailInput = document.getElementById('notifyEmailInput');
+    if (notifyBtn) notifyBtn.classList.remove('hidden');
+    if (emailRow) emailRow.classList.add('hidden');
+    if (confirmed) confirmed.classList.add('hidden');
+    if (emailInput) emailInput.value = '';
 }
 
 function hideLoading() {
@@ -820,19 +828,48 @@ function hideLoading() {
 
 // Notification helpers
 function enableNotification() {
-    notifyWhenReady = true;
-    alert('We will notify you when the output is ready!');
+    // Show the email input row instead of immediately enabling
+    const emailRow = document.getElementById('notifyEmailRow');
     const notifyBtn = document.getElementById('notifyBtn');
-    if (notifyBtn) {
-        notifyBtn.disabled = true;
-        notifyBtn.classList.add('btn-notify-active');
-        notifyBtn.innerHTML = `
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>🔔 Notification Enabled</span>
-        `;
+    if (emailRow) emailRow.classList.remove('hidden');
+    if (notifyBtn) notifyBtn.classList.add('hidden');
+}
+
+function confirmNotifyEmail() {
+    const emailInput = document.getElementById('notifyEmailInput');
+    const email = emailInput?.value.trim();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    notifyWhenReady = true;
+    notifyEmail = email;
+
+    document.getElementById('notifyEmailRow').classList.add('hidden');
+    document.getElementById('notifyEmailConfirmed').classList.remove('hidden');
+}
+
+async function sendEmailNotification(email, prompt, recordCount) {
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/send-email`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                receiver_email: email,
+                user_prompt: prompt,
+                record_count: recordCount
+            })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            console.error('Email API error:', data.detail);
+        } else {
+            console.log('Email sent successfully to', email);
+        }
+    } catch (e) {
+        console.error('Email notification failed:', e);
     }
 }
 
