@@ -26,6 +26,13 @@ wheels/
 .installed.cfg
 *.egg
 
+# ChromaDB (local vector store, not needed in deployment)
+chroma_db/
+backend/chroma_db/
+
+# Virtual environment
+.venv/
+
 # IDE
 .vscode/
 .idea/
