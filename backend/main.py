@@ -68,6 +68,11 @@ class SchemaAnalysisRequest(BaseModel):
 class AnalyzeQueryRequest(BaseModel):
     query: str = Field(..., description="Query to analyze")
 
+class EmailNotificationRequest(BaseModel):
+    receiver_email: str = Field(..., description="Recipient email address")
+    user_prompt: str = Field(..., description="The original data generation prompt")
+    record_count: int = Field(default=0, description="Number of records generated")
+
 # Initialize services after app is defined
 # LLM Router: tries Groq first, falls back to Gemini automatically
 try:
@@ -444,6 +449,21 @@ async def generate_schema(request: DataGenerationRequest):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.post("/api/send-email")
+async def send_email_notification(request: EmailNotificationRequest):
+    """Send an email notification when data generation is complete."""
+    try:
+        from backend.Email import send_notification_email
+        send_notification_email(
+            receiver_email=request.receiver_email,
+            user_prompt=request.user_prompt,
+            record_count=request.record_count,
+        )
+        return {"success": True, "message": f"Email sent to {request.receiver_email}"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to send email: {str(e)}")
+
 
 # Startup event
 @app.on_event("startup")
